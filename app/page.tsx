@@ -501,7 +501,7 @@ export default function HomePage() {
             : "bg-transparent text-white"
         }`}
       >
-        <div className="mx-auto flex h-[88px] max-w-[1540px] items-center justify-between px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto flex h-22 max-w-[1540px] items-center justify-between px-5 sm:px-8 lg:px-12">
           <Logo light={!headerSolid} />
 
           <nav className="hidden items-center gap-10 lg:flex">
@@ -569,7 +569,7 @@ export default function HomePage() {
       </header>
 
       {/* Editorial cover */}
-      <section className="relative min-h-[850px] overflow-hidden bg-brand-cream lg:min-h-screen">
+      <section className="relative min-h-212.5 overflow-hidden bg-brand-cream lg:min-h-screen">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[61%]">
           <img
             src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2500&q=92"
@@ -589,8 +589,8 @@ export default function HomePage() {
           }}
         />
 
-        <div className="relative mx-auto flex min-h-[850px] max-w-[1540px] items-end px-5 pb-16 pt-36 sm:px-8 lg:min-h-screen lg:items-center lg:px-12 lg:pb-12">
-          <div className="relative z-10 max-w-[860px]">
+        <div className="relative mx-auto flex min-h-212.5 max-w-[1540px] items-end px-5 pb-16 pt-36 sm:px-8 lg:min-h-screen lg:items-center lg:px-12 lg:pb-12">
+          <div className="relative z-10 max-w-215">
             <p className="text-[10px] font-bold uppercase tracking-[0.23em] text-brand-cyan lg:text-brand-cobalt">
               High-performance technology consulting
             </p>
@@ -602,7 +602,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="mt-9 max-w-[660px] text-lg leading-8 text-white/75 sm:text-xl lg:text-brand-slate">
+            <p className="mt-9 max-w-165 text-lg leading-8 text-white/75 sm:text-xl lg:text-brand-slate">
               Jethavictus transforms complex enterprise technology into
               scalable systems, stronger operations, and measurable
               competitive progress.
@@ -635,7 +635,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="absolute bottom-0 right-0 z-20 max-w-[560px] bg-brand-gold px-7 py-8 text-brand-navy sm:px-10 lg:right-12 lg:px-12">
+          <div className="absolute bottom-0 right-0 z-20 max-w-140 bg-brand-gold px-7 py-8 text-brand-navy sm:px-10 lg:right-12 lg:px-12">
             <p className="font-display text-[22px] font-semibold leading-8 tracking-[-0.035em] sm:text-[27px]">
               “We don&apos;t just consult. We conquer complexity.”
             </p>
@@ -651,7 +651,7 @@ export default function HomePage() {
               key={`${service.shortTitle}-${index}`}
               type="button"
               onClick={() => setActiveService(index % services.length)}
-              className="group flex h-[84px] items-center gap-5 border-r border-white/20 px-8 transition-colors hover:bg-brand-navy sm:px-11"
+              className="group flex h-21 items-center gap-5 border-r border-white/20 px-8 transition-colors hover:bg-brand-navy sm:px-11"
             >
               <span className="h-2 w-2 rotate-45 bg-brand-gold" />
 
@@ -673,7 +673,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1540px] px-5 py-28 sm:px-8 lg:px-12 lg:py-44">
           <div className="relative grid gap-16 lg:grid-cols-[1.3fr_0.7fr] lg:gap-24">
             <div>
-              <p className="max-w-[1080px] font-display text-[41px] font-semibold leading-[1.09] tracking-[-0.055em] text-brand-navy sm:text-[58px] lg:text-[70px]">
+              <p className="max-w-270 font-display text-[41px] font-semibold leading-[1.09] tracking-[-0.055em] text-brand-navy sm:text-[58px] lg:text-[70px]">
                 Technology should not merely support the enterprise.
                 <span className="text-brand-cobalt">
                   {" "}
@@ -696,14 +696,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative min-h-[420px] lg:min-h-[660px]">
+            <div className="relative min-h-105 lg:min-h-165">
               <img
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=90"
                 alt="Senior technology consultants collaborating"
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/75 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-brand-deep/75 via-transparent to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
                 <p className="text-[10px] font-bold uppercase tracking-[0.21em] text-brand-cyan">
@@ -722,7 +722,7 @@ export default function HomePage() {
       {/* Immersive services stage */}
       <section
         id="capabilities"
-        className="relative min-h-[950px] scroll-mt-20 overflow-hidden bg-brand-deep text-white"
+        className="relative min-h-237.5 scroll-mt-20 overflow-hidden bg-brand-deep text-white"
       >
         <img
           key={selectedService.image}
@@ -735,12 +735,12 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,19,29,0.28)_0%,rgba(4,19,29,0.18)_45%,rgba(4,19,29,0.92)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[950px] max-w-[1540px] flex-col px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+        <div className="relative mx-auto flex min-h-237.5 max-w-[1540px] flex-col px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
           <div className="flex flex-col justify-between gap-9 lg:flex-row lg:items-end">
             <div>
               <EditorialLabel light>Core capabilities</EditorialLabel>
 
-              <h2 className="font-display mt-8 max-w-[870px] text-[44px] font-semibold leading-[1.03] tracking-[-0.06em] sm:text-[61px] lg:text-[76px]">
+              <h2 className="font-display mt-8 max-w-217.5 text-[44px] font-semibold leading-[1.03] tracking-[-0.06em] sm:text-[61px] lg:text-[76px]">
                 One strategy.
                 <span className="block text-brand-cyan">
                   Seven connected practices.
@@ -793,7 +793,7 @@ export default function HomePage() {
                   </span>
 
                   <span
-                    className={`absolute bottom-0 left-0 h-[3px] bg-brand-gold transition-all ${
+                    className={`absolute bottom-0 left-0 h-0.75 bg-brand-gold transition-all ${
                       isActive ? "w-full" : "w-0"
                     }`}
                   />
@@ -810,7 +810,7 @@ export default function HomePage() {
                 className="text-brand-gold"
               />
 
-              <p className="font-display mt-8 max-w-[520px] text-[31px] font-semibold leading-[1.18] tracking-[-0.04em] sm:text-[40px]">
+              <p className="font-display mt-8 max-w-130 text-[31px] font-semibold leading-[1.18] tracking-[-0.04em] sm:text-[40px]">
                 {selectedService.statement}
               </p>
             </div>
@@ -820,11 +820,11 @@ export default function HomePage() {
                 Capability {selectedService.number}
               </span>
 
-              <h3 className="font-display mt-5 max-w-[850px] text-[38px] font-semibold leading-[1.05] tracking-[-0.05em] sm:text-[52px]">
+              <h3 className="font-display mt-5 max-w-212.5 text-[38px] font-semibold leading-[1.05] tracking-tighter sm:text-[52px]">
                 {selectedService.title}
               </h3>
 
-              <p className="mt-7 max-w-[780px] text-lg leading-8 text-white/65">
+              <p className="mt-7 max-w-195 text-lg leading-8 text-white/65">
                 {selectedService.description}
               </p>
 
@@ -851,7 +851,7 @@ export default function HomePage() {
             <div>
               <EditorialLabel>Why Jethavictus</EditorialLabel>
 
-              <h2 className="font-display mt-8 max-w-[520px] text-[42px] font-semibold leading-[1.06] tracking-[-0.055em] text-brand-navy sm:text-[56px]">
+              <h2 className="font-display mt-8 max-w-130 text-[42px] font-semibold leading-[1.06] tracking-[-0.055em] text-brand-navy sm:text-[56px]">
                 Built for the moments that matter.
               </h2>
             </div>
@@ -861,7 +861,7 @@ export default function HomePage() {
                 {differentiators.map((item) => (
                   <article
                     key={item.title}
-                    className="group w-[320px] border-r border-brand-line px-7 py-3 sm:w-[370px] sm:px-9"
+                    className="group w-[320px] border-r border-brand-line px-7 py-3 sm:w-92.5 sm:px-9"
                   >
                     <span className="font-display text-[70px] font-semibold leading-none tracking-[-0.08em] text-brand-cobalt/15 transition-colors group-hover:text-brand-cobalt">
                       {item.number}
@@ -894,11 +894,11 @@ export default function HomePage() {
           />
 
           <div className="absolute inset-0 bg-brand-cobalt/25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-cobalt via-brand-cobalt/30 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-brand-cobalt via-brand-cobalt/30 to-transparent" />
         </div>
 
         <div className="relative mx-auto max-w-[1540px] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
-          <div className="max-w-[820px]">
+          <div className="max-w-205">
             <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold">
               Our mission
             </p>
@@ -908,7 +908,7 @@ export default function HomePage() {
               dominance, and long-term business growth.
             </p>
 
-            <div className="mt-16 max-w-[700px] border-t border-white/25 pt-10">
+            <div className="mt-16 max-w-175 border-t border-white/25 pt-10">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand-gold">
                 Our vision
               </p>
@@ -932,12 +932,12 @@ export default function HomePage() {
             <div>
               <EditorialLabel>Execution model</EditorialLabel>
 
-              <h2 className="font-display mt-8 max-w-[900px] text-[43px] font-semibold leading-[1.04] tracking-[-0.06em] text-brand-navy sm:text-[60px] lg:text-[74px]">
+              <h2 className="font-display mt-8 max-w-225 text-[43px] font-semibold leading-[1.04] tracking-[-0.06em] text-brand-navy sm:text-[60px] lg:text-[74px]">
                 From ambiguity to accountable execution.
               </h2>
             </div>
 
-            <p className="max-w-[460px] text-lg leading-8 text-brand-slate">
+            <p className="max-w-115 text-lg leading-8 text-brand-slate">
               Four connected phases. Senior ownership and visible progress
               throughout.
             </p>
@@ -990,7 +990,7 @@ export default function HomePage() {
               })}
             </div>
 
-            <div className="relative min-h-[680px] overflow-hidden bg-brand-deep">
+            <div className="relative min-h-170 overflow-hidden bg-brand-deep">
               <img
                 key={selectedExecution.image}
                 src={selectedExecution.image}
@@ -1005,11 +1005,11 @@ export default function HomePage() {
                   {selectedExecution.number}
                 </span>
 
-                <p className="font-display mt-4 max-w-[760px] text-[32px] font-semibold leading-[1.14] tracking-[-0.045em] sm:text-[43px]">
+                <p className="font-display mt-4 max-w-190 text-[32px] font-semibold leading-[1.14] tracking-[-0.045em] sm:text-[43px]">
                   {selectedExecution.statement}
                 </p>
 
-                <p className="mt-6 max-w-[740px] text-lg leading-8 text-white/63">
+                <p className="mt-6 max-w-185 text-lg leading-8 text-white/63">
                   {selectedExecution.description}
                 </p>
 
@@ -1033,7 +1033,7 @@ export default function HomePage() {
       {/* Cinematic industries */}
       <section
         id="industries"
-        className="relative min-h-[950px] scroll-mt-20 overflow-hidden bg-brand-deep text-white"
+        className="relative min-h-237.5 scroll-mt-20 overflow-hidden bg-brand-deep text-white"
       >
         <img
           key={selectedIndustry.image}
@@ -1044,7 +1044,7 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,19,29,0.55)_0%,rgba(4,19,29,0.12)_42%,rgba(4,19,29,0.94)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[950px] max-w-[1540px] flex-col px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+        <div className="relative mx-auto flex min-h-237.5 max-w-[1540px] flex-col px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
           <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-start">
             <div>
               <EditorialLabel light>Industries</EditorialLabel>
