@@ -30,6 +30,48 @@
   --color-brand-white: #ffffff;
 }
 
+@theme {
+  /* Typography */
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
+
+  /* Core surfaces */
+  --color-background: #fffdf8;
+  --color-foreground: #102631;
+
+  /* Primary brand */
+  --color-brand-navy: #081d2c;
+  --color-brand-deep: #04131d;
+  --color-brand-cobalt: #2b63f1;
+  --color-brand-cobalt-dark: #1c4ed1;
+
+  /* Supporting accents */
+  --color-brand-cyan: #7bd9e5;
+  --color-brand-cyan-soft: #d9f2f4;
+  --color-brand-gold: #f3b84b;
+  --color-brand-gold-dark: #d79a29;
+
+  /* Neutral system */
+  --color-brand-cream: #f5f1e8;
+  --color-brand-paper: #fffdf8;
+  --color-brand-cloud: #e5ecef;
+  --color-brand-slate: #536570;
+  --color-brand-line: #c7d1d6;
+  --color-brand-white: #ffffff;
+
+  /* Jethavictus shape system */
+  --radius-brand-sm: 1.25rem;
+  --radius-brand-md: 2rem;
+  --radius-brand-lg: 3rem;
+  --radius-brand-xl: 4.5rem;
+  --radius-brand-pill: 999px;
+
+  /* Soft elevations */
+  --shadow-brand-soft: 0 24px 70px rgba(8, 29, 44, 0.1);
+  --shadow-brand-card: 0 14px 42px rgba(8, 29, 44, 0.08);
+  --shadow-brand-float: 0 20px 60px rgba(4, 19, 29, 0.16);
+}
+
 html {
   scroll-behavior: smooth;
 }
