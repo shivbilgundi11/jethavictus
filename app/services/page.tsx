@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowDown,
@@ -9,21 +10,16 @@ import {
   BrainCircuit,
   Building2,
   Check,
-  ChevronDown,
   CloudCog,
-  Database,
   GitMerge,
   Headphones,
-  Landmark,
   Layers3,
-  Menu,
   Network,
   RefreshCw,
   Route,
   Settings2,
   ShieldCheck,
   Sparkles,
-  X,
 } from "lucide-react";
 
 import { servicesContent, type ServiceIconName } from "@/lib/content/services";
@@ -57,7 +53,6 @@ const sharedCapabilityIcons: Record<
 export default function ServicesPage() {
   const {
     brand,
-    header,
     hero,
     introduction,
     services,
@@ -66,122 +61,10 @@ export default function ServicesPage() {
     engagementModels,
     closingStatement,
     contact,
-    footer,
   } = servicesContent;
 
   return (
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
-      {/* Header */}
-      <header className="bg-surface-page relative z-50">
-        <div className="border-line-subtle bg-surface-soft hidden border-b lg:block">
-          <div className="mx-auto flex h-9 w-full max-w-[1440px] items-center justify-end px-5 sm:px-8 lg:px-12">
-            <nav
-              aria-label="Utility navigation"
-              className="text-content-muted flex items-center gap-7 text-[11px] font-semibold"
-            >
-              {header.utilityNavigation.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-
-        <div className="mx-auto flex h-[74px] w-full max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a
-            href="/"
-            aria-label={`${brand.name} ${brand.suffix} home`}
-            className="flex items-center gap-3"
-          >
-            <span className="border-brand-navy relative flex h-10 w-10 items-center justify-center border-2">
-              <span className="text-brand-navy text-sm font-black tracking-[-0.08em]">
-                {brand.initials}
-              </span>
-
-              <span className="border-surface-page bg-brand-blue absolute -right-1 -bottom-1 h-3 w-3 border-2" />
-            </span>
-
-            <span className="leading-none">
-              <span className="text-brand-navy block text-[15px] font-extrabold tracking-[0.08em]">
-                {brand.name}
-              </span>
-
-              <span className="text-content-muted mt-1 block text-[9px] font-bold tracking-[0.38em]">
-                {brand.suffix}
-              </span>
-            </span>
-          </a>
-
-          <nav
-            aria-label="Primary navigation"
-            className="hidden items-center gap-8 xl:flex"
-          >
-            {header.primaryNavigation.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`group hover:text-brand-blue flex items-center gap-1 text-[13px] font-semibold transition-colors ${
-                  item.href === "/services"
-                    ? "text-brand-blue"
-                    : "text-content-secondary"
-                }`}
-              >
-                {item.label}
-
-                <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <a
-              href={header.cta.href}
-              className="bg-brand-blue text-content-inverse hover:bg-brand-blue-dark hidden items-center gap-3 px-5 py-3 text-xs font-bold transition-colors md:flex"
-            >
-              {header.cta.label}
-              <ArrowRight className="h-4 w-4" />
-            </a>
-
-            <details className="group relative xl:hidden">
-              <summary className="text-brand-navy flex h-11 w-11 cursor-pointer list-none items-center justify-center [&::-webkit-details-marker]:hidden">
-                <span className="sr-only">Open navigation</span>
-
-                <Menu className="h-6 w-6 group-open:hidden" />
-                <X className="hidden h-6 w-6 group-open:block" />
-              </summary>
-
-              <div className="border-line-subtle bg-surface-page shadow-navigation fixed inset-x-0 top-[74px] border-t lg:top-[111px]">
-                <nav className="mx-auto flex w-full max-w-[1440px] flex-col px-5 py-4 sm:px-8 lg:px-12">
-                  {header.primaryNavigation.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="border-line-subtle text-brand-navy flex items-center justify-between border-b py-5 text-lg font-semibold"
-                    >
-                      {item.label}
-                      <ArrowRight className="h-5 w-5" />
-                    </a>
-                  ))}
-
-                  <a
-                    href={header.cta.href}
-                    className="bg-brand-blue text-content-inverse mt-5 flex items-center justify-between px-5 py-4 text-sm font-bold"
-                  >
-                    {header.cta.label}
-                    <ArrowRight className="h-5 w-5" />
-                  </a>
-                </nav>
-              </div>
-            </details>
-          </div>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="bg-brand-navy relative min-h-[640px] overflow-hidden sm:min-h-[700px] lg:min-h-[760px]">
         <img
@@ -441,13 +324,13 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <a
+                    <Link
                       href="/#contact"
                       className="group bg-brand-blue text-content-inverse hover:bg-brand-blue-dark mt-10 inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
                     >
                       Discuss this capability
                       <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -689,75 +572,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-brand-navy text-content-inverse">
-        <div className="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
-          <div className="border-line-inverse/20 grid gap-12 border-b pb-14 lg:grid-cols-[1.15fr_2fr]">
-            <div>
-              <a
-                href="/"
-                aria-label={`${brand.name} ${brand.suffix} home`}
-                className="flex items-center gap-3"
-              >
-                <span className="border-line-inverse relative flex h-10 w-10 items-center justify-center border-2">
-                  <span className="text-content-inverse text-sm font-black tracking-[-0.08em]">
-                    {brand.initials}
-                  </span>
-
-                  <span className="border-brand-navy bg-surface-page absolute -right-1 -bottom-1 h-3 w-3 border-2" />
-                </span>
-
-                <span className="leading-none">
-                  <span className="text-content-inverse block text-[15px] font-extrabold tracking-[0.08em]">
-                    {brand.name}
-                  </span>
-
-                  <span className="text-content-inverse/65 mt-1 block text-[9px] font-bold tracking-[0.38em]">
-                    {brand.suffix}
-                  </span>
-                </span>
-              </a>
-
-              <p className="text-content-inverse/60 mt-7 max-w-sm text-sm leading-7">
-                {brand.description}
-              </p>
-            </div>
-
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              {footer.groups.map((group) => (
-                <div key={group.title}>
-                  <h3 className="text-content-inverse text-xs font-bold tracking-[0.18em] uppercase">
-                    {group.title}
-                  </h3>
-
-                  <ul className="mt-5 space-y-3">
-                    {group.links.map((link) => (
-                      <li key={link.label}>
-                        <a
-                          href={link.href}
-                          className="text-content-inverse/60 hover:text-content-inverse text-sm transition-colors"
-                        >
-                          {link.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-content-inverse/45 flex flex-col gap-4 pt-8 text-xs sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © {new Date().getFullYear()} {brand.name} {brand.suffix}. All
-              rights reserved.
-            </p>
-
-            <p>{brand.tagline}</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

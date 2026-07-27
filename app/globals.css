@@ -51,6 +51,13 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  button,
+  a[class*="px-5"][class*="py-3"],
+  a[class*="px-5"][class*="py-4"],
+  a[class*="px-6"][class*="py-4"] {
+    border-radius: 9999px;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-brand-blue);
     outline-offset: 4px;
