@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="bg-surface-page text-content-primary flex min-h-[70vh] items-center">
-      <section className="mx-auto w-full max-w-[900px] px-5 py-24 sm:px-8 lg:px-12">
+      <section className="mx-auto w-full max-w-225 px-5 py-24 sm:px-8 lg:px-12">
         <p className="text-brand-blue text-4xl font-bold tracking-[0.2em] uppercase lg:text-6xl">
           404
         </p>

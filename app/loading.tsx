@@ -1,8 +1,8 @@
 export default function Loading() {
   return (
     <main className="bg-surface-page text-content-primary overflow-hidden">
-      <section className="bg-brand-navy min-h-[620px] animate-pulse sm:min-h-[680px] lg:min-h-[740px]">
-        <div className="mx-auto flex min-h-[620px] w-full max-w-[1440px] items-center px-5 py-20 sm:min-h-[680px] sm:px-8 lg:min-h-[740px] lg:px-12">
+      <section className="bg-brand-navy min-h-155 animate-pulse sm:min-h-170 lg:min-h-185">
+        <div className="mx-auto flex min-h-155 w-full max-w-360 items-center px-5 py-20 sm:min-h-170 sm:px-8 lg:min-h-185 lg:px-12">
           <div className="w-full max-w-4xl">
             <div className="bg-content-inverse/20 h-4 w-48 rounded-full" />
             <div className="bg-content-inverse/25 mt-8 h-20 w-full max-w-3xl rounded" />
