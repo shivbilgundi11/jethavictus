@@ -1,0 +1,389 @@
+export type NavigationItem = {
+  label: string;
+  href: string;
+};
+
+export type ContactMethodIcon = "email" | "phone" | "business" | "careers";
+
+export type ContactMethod = {
+  icon: ContactMethodIcon;
+  label: string;
+  value: string;
+  description: string;
+  href: string;
+  external?: boolean;
+};
+
+export type Office = {
+  name: string;
+  type: string;
+  city: string;
+  country: string;
+  addressLines: string[];
+  phone: string;
+  phoneHref: string;
+  email: string;
+  hours: string[];
+  mapUrl: string;
+  image: string;
+  imageAlt: string;
+  isPrimary?: boolean;
+};
+
+export type FooterGroup = {
+  title: string;
+  links: NavigationItem[];
+};
+
+export const contactContent = {
+  brand: {
+    name: "JETHAVICTUS",
+    suffix: "SOLUTIONS",
+    initials: "JV",
+    email: "hello@jethavictus.com",
+    website: "https://www.jethavictus.com",
+    websiteLabel: "www.jethavictus.com",
+    tagline: "Engineered for victory. Built for the future.",
+    description:
+      "High-performance technology consulting for organizations that refuse to settle for average.",
+  },
+
+  header: {
+    utilityNavigation: [
+      {
+        label: "Company",
+        href: "/about",
+      },
+      {
+        label: "Technology",
+        href: "/services",
+      },
+      {
+        label: "Careers",
+        href: "/careers",
+      },
+      {
+        label: "Contact",
+        href: "/contact",
+      },
+    ] satisfies NavigationItem[],
+
+    primaryNavigation: [
+      {
+        label: "Who we are",
+        href: "/about",
+      },
+      {
+        label: "Capabilities",
+        href: "/services",
+      },
+      {
+        label: "Careers",
+        href: "/careers",
+      },
+      {
+        label: "Contact",
+        href: "/contact",
+      },
+    ] satisfies NavigationItem[],
+
+    cta: {
+      label: "Contact our team",
+      href: "#contact-details",
+    },
+  },
+
+  hero: {
+    label: "Contact Jethavictus",
+    title: "Bring us the challenge.",
+    highlightedTitle: "We will engineer the path forward.",
+    description:
+      "Connect with our team to discuss technology strategy, enterprise transformation, implementation support, partnerships, or career opportunities.",
+
+    primaryCta: {
+      label: "Contact our team",
+      href: "#contact-details",
+    },
+
+    secondaryCta: {
+      label: "View office locations",
+      href: "#offices",
+    },
+
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2400&q=90",
+    imageAlt: "Modern corporate office and enterprise technology workspace",
+  },
+
+  introduction: {
+    label: "Start a conversation",
+    title: "Direct access to the right team.",
+    description:
+      "Whether you are evaluating a strategic initiative, looking for specialist delivery support, exploring a partnership, or interested in joining Jethavictus, contact the team most relevant to your request.",
+
+    statement:
+      "We keep communication direct. Send us the context, the challenge, and the outcome you are trying to achieve.",
+  },
+
+  contactMethods: [
+    {
+      icon: "email",
+      label: "General inquiries",
+      value: "hello@jethavictus.com",
+      description:
+        "For general questions, company information, and initial introductions.",
+      href: "mailto:hello@jethavictus.com",
+    },
+    {
+      icon: "business",
+      label: "Business and consulting",
+      value: "business@jethavictus.com",
+      description:
+        "For consulting engagements, technology programs, partnerships, and enterprise opportunities.",
+      href: "mailto:business@jethavictus.com",
+    },
+    {
+      icon: "careers",
+      label: "Careers",
+      value: "careers@jethavictus.com",
+      description:
+        "For career-related questions and information about open opportunities.",
+      href: "mailto:careers@jethavictus.com",
+    },
+    {
+      icon: "phone",
+      label: "Main office",
+      value: "+1 (000) 000-0000",
+      description:
+        "Available during standard business hours for direct inquiries.",
+      href: "tel:+10000000000",
+    },
+  ] satisfies ContactMethod[],
+
+  officeSection: {
+    label: "Our offices",
+    title: "Connected globally. Available locally.",
+    description:
+      "Jethavictus supports clients across regions through a network of consulting, engineering, and delivery offices.",
+
+    offices: [
+      {
+        name: "Corporate Headquarters",
+        type: "Executive & Consulting Office",
+        city: "City Name",
+        country: "Country",
+        addressLines: [
+          "Building or Business Park",
+          "Street Address, Floor or Suite",
+          "City, State or Region, Postal Code",
+        ],
+        phone: "+1 (000) 000-0000",
+        phoneHref: "tel:+10000000000",
+        email: "hello@jethavictus.com",
+        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
+        mapUrl: "https://maps.google.com/?q=REPLACE+WITH+HEADQUARTERS+ADDRESS",
+        image:
+          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+        imageAlt: "Modern corporate headquarters office",
+        isPrimary: true,
+      },
+      {
+        name: "Technology Delivery Center",
+        type: "Engineering & Delivery Office",
+        city: "City Name",
+        country: "Country",
+        addressLines: [
+          "Technology Campus or Building",
+          "Street Address, Floor or Suite",
+          "City, State or Region, Postal Code",
+        ],
+        phone: "+91 00000 00000",
+        phoneHref: "tel:+910000000000",
+        email: "delivery@jethavictus.com",
+        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
+        mapUrl:
+          "https://maps.google.com/?q=REPLACE+WITH+DELIVERY+CENTER+ADDRESS",
+        image:
+          "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=85",
+        imageAlt: "Technology engineering and delivery office",
+      },
+      {
+        name: "Regional Consulting Office",
+        type: "Client Advisory Office",
+        city: "City Name",
+        country: "Country",
+        addressLines: [
+          "Business District or Office Tower",
+          "Street Address, Floor or Suite",
+          "City, State or Region, Postal Code",
+        ],
+        phone: "+1 (000) 000-0000",
+        phoneHref: "tel:+10000000000",
+        email: "regional@jethavictus.com",
+        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
+        mapUrl:
+          "https://maps.google.com/?q=REPLACE+WITH+REGIONAL+OFFICE+ADDRESS",
+        image:
+          "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
+        imageAlt: "Regional enterprise consulting office",
+      },
+      {
+        name: "Client Experience Center",
+        type: "Innovation & Collaboration Office",
+        city: "City Name",
+        country: "Country",
+        addressLines: [
+          "Innovation Center or Business Park",
+          "Street Address, Floor or Suite",
+          "City, State or Region, Postal Code",
+        ],
+        phone: "+44 00 0000 0000",
+        phoneHref: "tel:+440000000000",
+        email: "experience@jethavictus.com",
+        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Appointments recommended"],
+        mapUrl:
+          "https://maps.google.com/?q=REPLACE+WITH+EXPERIENCE+CENTER+ADDRESS",
+        image:
+          "https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=85",
+        imageAlt: "Client innovation and collaboration center",
+      },
+    ] satisfies Office[],
+  },
+
+  availability: {
+    label: "Business hours",
+    title: "Available across time zones.",
+    description:
+      "Our offices operate according to their local business hours. Enterprise clients with active support agreements should continue to use their assigned service and escalation channels.",
+
+    details: [
+      {
+        label: "Standard inquiries",
+        value: "Monday–Friday, 9:00 AM–6:00 PM",
+      },
+      {
+        label: "Response target",
+        value: "Within one business day",
+      },
+      {
+        label: "Client support",
+        value: "Based on your service agreement",
+      },
+      {
+        label: "Office visits",
+        value: "Appointments recommended",
+      },
+    ],
+  },
+
+  visitSection: {
+    label: "Planning a visit?",
+    title: "Meet with our team.",
+    highlightedTitle: "Move the conversation forward.",
+    description:
+      "Office meetings are available by appointment. Contact the relevant office or your Jethavictus representative before visiting so we can connect you with the right team.",
+
+    image:
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=90",
+    imageAlt:
+      "Enterprise consultants meeting in a professional office environment",
+  },
+
+  finalContact: {
+    label: "Not sure where to start?",
+    title: "Send your request to",
+    highlightedTitle: "our central team.",
+    description:
+      "We will review your inquiry and connect you with the appropriate consulting, technology, careers, or regional team.",
+    ctaLabel: "Email Jethavictus",
+  },
+
+  footer: {
+    groups: [
+      {
+        title: "Company",
+        links: [
+          {
+            label: "Who we are",
+            href: "/about",
+          },
+          {
+            label: "Careers",
+            href: "/careers",
+          },
+          {
+            label: "Our principles",
+            href: "/about#principles",
+          },
+          {
+            label: "Contact",
+            href: "/contact",
+          },
+        ],
+      },
+      {
+        title: "Capabilities",
+        links: [
+          {
+            label: "IT consulting",
+            href: "/services#strategic-it-consulting",
+          },
+          {
+            label: "Artificial intelligence",
+            href: "/services#artificial-intelligence",
+          },
+          {
+            label: "Cloud and AWS",
+            href: "/services#cloud-architecture",
+          },
+          {
+            label: "Cybersecurity",
+            href: "/services#cybersecurity",
+          },
+        ],
+      },
+      {
+        title: "More capabilities",
+        links: [
+          {
+            label: "Enterprise ERP",
+            href: "/services#enterprise-erp",
+          },
+          {
+            label: "Blockchain",
+            href: "/services#blockchain",
+          },
+          {
+            label: "IoT and data science",
+            href: "/services#iot-data-science",
+          },
+          {
+            label: "All services",
+            href: "/services",
+          },
+        ],
+      },
+      {
+        title: "Connect",
+        links: [
+          {
+            label: "Office locations",
+            href: "#offices",
+          },
+          {
+            label: "Business inquiries",
+            href: "mailto:business@jethavictus.com",
+          },
+          {
+            label: "Careers",
+            href: "/careers",
+          },
+          {
+            label: "Email our team",
+            href: "mailto:hello@jethavictus.com",
+          },
+        ],
+      },
+    ] satisfies FooterGroup[],
+  },
+} as const;

@@ -2,6 +2,9 @@
 
 @theme {
   /* Brand */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
   --color-brand-navy: #001f4d;
   --color-brand-navy-deep: #001538;
   --color-brand-blue: #0072ce;
