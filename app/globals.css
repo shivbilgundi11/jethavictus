@@ -1,75 +1,128 @@
 @import "tailwindcss";
 
-@theme {
-  /* Typography */
+/* @theme {
   --font-sans: var(--font-manrope);
   --font-display: var(--font-sora);
 
-  /* Core surfaces */
   --color-background: #fffdf8;
   --color-foreground: #102631;
 
-  /* Primary brand */
   --color-brand-navy: #081d2c;
   --color-brand-deep: #04131d;
   --color-brand-cobalt: #2b63f1;
   --color-brand-cobalt-dark: #1c4ed1;
 
-  /* Supporting accents */
   --color-brand-cyan: #7bd9e5;
   --color-brand-cyan-soft: #d9f2f4;
   --color-brand-gold: #f3b84b;
   --color-brand-gold-dark: #d79a29;
 
-  /* Neutral system */
   --color-brand-cream: #f5f1e8;
   --color-brand-paper: #fffdf8;
   --color-brand-cloud: #e5ecef;
   --color-brand-slate: #536570;
   --color-brand-line: #c7d1d6;
   --color-brand-white: #ffffff;
-}
+} */
 
-@theme {
-  /* Typography */
+/* @theme {
   --font-sans: var(--font-manrope);
   --font-display: var(--font-sora);
 
-  /* Core surfaces */
-  --color-background: #fffdf8;
-  --color-foreground: #102631;
+  --color-background: #fbfaff;
+  --color-foreground: #24213b;
 
-  /* Primary brand */
-  --color-brand-navy: #081d2c;
-  --color-brand-deep: #04131d;
-  --color-brand-cobalt: #2b63f1;
-  --color-brand-cobalt-dark: #1c4ed1;
+  --color-brand-navy: #211d4f;
+  --color-brand-deep: #13112f;
+  --color-brand-cobalt: #6558e8;
+  --color-brand-cobalt-dark: #4b3dcc;
 
-  /* Supporting accents */
-  --color-brand-cyan: #7bd9e5;
-  --color-brand-cyan-soft: #d9f2f4;
-  --color-brand-gold: #f3b84b;
-  --color-brand-gold-dark: #d79a29;
+  --color-brand-cyan: #aaa5ff;
+  --color-brand-cyan-soft: #e8e6ff;
+  --color-brand-gold: #f2b84b;
+  --color-brand-gold-dark: #d79424;
 
-  /* Neutral system */
-  --color-brand-cream: #f5f1e8;
-  --color-brand-paper: #fffdf8;
-  --color-brand-cloud: #e5ecef;
-  --color-brand-slate: #536570;
-  --color-brand-line: #c7d1d6;
+  --color-brand-cream: #f4f1ed;
+  --color-brand-paper: #fbfaff;
+  --color-brand-cloud: #e8e6ef;
+  --color-brand-slate: #68647a;
+  --color-brand-line: #d0cddd;
   --color-brand-white: #ffffff;
+} */
 
-  /* Jethavictus shape system */
-  --radius-brand-sm: 1.25rem;
-  --radius-brand-md: 2rem;
-  --radius-brand-lg: 3rem;
-  --radius-brand-xl: 4.5rem;
-  --radius-brand-pill: 999px;
+/* @theme {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
 
-  /* Soft elevations */
-  --shadow-brand-soft: 0 24px 70px rgba(8, 29, 44, 0.1);
-  --shadow-brand-card: 0 14px 42px rgba(8, 29, 44, 0.08);
-  --shadow-brand-float: 0 20px 60px rgba(4, 19, 29, 0.16);
+  --color-background: #fafbf6;
+  --color-foreground: #253229;
+
+  --color-brand-navy: #173f32;
+  --color-brand-deep: #0d281f;
+  --color-brand-cobalt: #3c8c68;
+  --color-brand-cobalt-dark: #28704f;
+
+  --color-brand-cyan: #9ccbb1;
+  --color-brand-cyan-soft: #e1f0e6;
+  --color-brand-gold: #dda94e;
+  --color-brand-gold-dark: #bd8428;
+
+  --color-brand-cream: #f2f0e4;
+  --color-brand-paper: #fafbf6;
+  --color-brand-cloud: #e3e9e1;
+  --color-brand-slate: #5c6d62;
+  --color-brand-line: #c8d2ca;
+  --color-brand-white: #ffffff;
+} */
+
+/* @theme {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
+
+  --color-background: #fffaf6;
+  --color-foreground: #36241f;
+
+  --color-brand-navy: #4a2524;
+  --color-brand-deep: #2d1515;
+  --color-brand-cobalt: #d75b43;
+  --color-brand-cobalt-dark: #b83f2f;
+
+  --color-brand-cyan: #ef9f83;
+  --color-brand-cyan-soft: #fae4db;
+  --color-brand-gold: #efb74d;
+  --color-brand-gold-dark: #cf8c23;
+
+  --color-brand-cream: #f6ede4;
+  --color-brand-paper: #fffaf6;
+  --color-brand-cloud: #eee3dd;
+  --color-brand-slate: #755e57;
+  --color-brand-line: #dbc9c1;
+  --color-brand-white: #ffffff;
+} */
+
+@theme {
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
+
+  --color-background: #fafcf8;
+  --color-foreground: #202a25;
+
+  --color-brand-navy: #26332e;
+  --color-brand-deep: #121a17;
+  --color-brand-cobalt: #74a83c;
+  --color-brand-cobalt-dark: #56872a;
+
+  --color-brand-cyan: #a8d76c;
+  --color-brand-cyan-soft: #e7f4d7;
+  --color-brand-gold: #f0b84c;
+  --color-brand-gold-dark: #cc8724;
+
+  --color-brand-cream: #f1f2e9;
+  --color-brand-paper: #fafcf8;
+  --color-brand-cloud: #e3e9e4;
+  --color-brand-slate: #5d6d65;
+  --color-brand-line: #c8d2cb;
+  --color-brand-white: #ffffff;
 }
 
 html {
