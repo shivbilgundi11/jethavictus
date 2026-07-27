@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -23,12 +24,9 @@ import {
 } from "lucide-react";
 
 import { servicesContent, type ServiceIconName } from "@/lib/content/services";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Technology Services",
-  description:
-    "Explore Jethavictus Solutions services across strategic IT consulting, artificial intelligence, cloud architecture, cybersecurity, ERP, blockchain, IoT, and data science.",
-};
+export const metadata: Metadata = getPageMetadata("services");
 
 const serviceIcons: Record<ServiceIconName, LucideIcon> = {
   strategy: Route,
@@ -67,9 +65,12 @@ export default function ServicesPage() {
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
       <section className="bg-brand-navy relative min-h-[640px] overflow-hidden sm:min-h-[700px] lg:min-h-[760px]">
-        <img
+        <Image
           src={hero.image}
           alt={hero.imageAlt}
+          fill
+          sizes="100vw"
+          preload
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -238,10 +239,11 @@ export default function ServicesPage() {
                     imageFirst ? "lg:order-2" : ""
                   }`}
                 >
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.imageAlt}
-                    loading="lazy"
+                    fill
+                    sizes="100vw"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
 
@@ -490,10 +492,11 @@ export default function ServicesPage() {
 
       {/* Closing statement */}
       <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
-        <img
+        <Image
           src={closingStatement.image}
           alt={closingStatement.imageAlt}
-          loading="lazy"
+          fill
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
 

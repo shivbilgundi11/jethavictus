@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowDown,
@@ -26,12 +27,9 @@ import {
 } from "lucide-react";
 
 import { careersContent, type CareerIconName } from "@/lib/content/careers";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Careers",
-  description:
-    "Explore technology consulting careers at Jethavictus Solutions across cloud, artificial intelligence, cybersecurity, enterprise applications, and data engineering.",
-};
+export const metadata: Metadata = getPageMetadata("careers");
 
 const jobIcons: Record<CareerIconName, LucideIcon> = {
   cloud: CloudCog,
@@ -69,9 +67,12 @@ export default function CareersPage() {
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
       <section className="bg-brand-navy relative min-h-[640px] overflow-hidden sm:min-h-[700px] lg:min-h-[760px]">
-        <img
+        <Image
           src={hero.image}
           alt={hero.imageAlt}
+          fill
+          sizes="100vw"
+          preload
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -473,10 +474,11 @@ export default function CareersPage() {
 
       {/* Closing statement */}
       <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
-        <img
+        <Image
           src={closingStatement.image}
           alt={closingStatement.imageAlt}
-          loading="lazy"
+          fill
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
 

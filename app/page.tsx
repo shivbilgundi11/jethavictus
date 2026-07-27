@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import { homeContent } from "@/lib/content/home";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = getPageMetadata("home");
 
 export default function HomePage() {
   const {
@@ -22,9 +27,12 @@ export default function HomePage() {
         id="top"
         className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]"
       >
-        <img
+        <Image
           src={hero.image}
           alt={hero.imageAlt}
+          fill
+          sizes="100vw"
+          preload
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -151,10 +159,11 @@ export default function HomePage() {
                 className="group border-line-subtle bg-surface-elevated flex h-full flex-col border"
               >
                 <div className="bg-surface-muted relative aspect-[16/10] overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.imageAlt}
-                    loading="lazy"
+                    fill
+                    sizes="100vw"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -234,10 +243,11 @@ export default function HomePage() {
 
           <div className="bg-brand-navy mt-20 grid overflow-hidden lg:grid-cols-2">
             <div className="relative min-h-[420px]">
-              <img
+              <Image
                 src={aboutSection.feature.image}
                 alt={aboutSection.feature.imageAlt}
-                loading="lazy"
+                fill
+                sizes="100vw"
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
@@ -318,10 +328,11 @@ export default function HomePage() {
                       : "aspect-[16/10]"
                   }`}
                 >
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.imageAlt}
-                    loading="lazy"
+                    fill
+                    sizes="100vw"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
 
@@ -538,10 +549,11 @@ export default function HomePage() {
       >
         <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
           <div className="relative min-h-[520px] overflow-hidden">
-            <img
+            <Image
               src={industriesSection.featureImage}
               alt={industriesSection.featureImageAlt}
-              loading="lazy"
+              fill
+              sizes="100vw"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
@@ -606,10 +618,11 @@ export default function HomePage() {
 
       {/* Commitment */}
       <section className="bg-brand-navy text-content-inverse relative min-h-[650px] overflow-hidden">
-        <img
+        <Image
           src={commitmentSection.image}
           alt={commitmentSection.imageAlt}
-          loading="lazy"
+          fill
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
 

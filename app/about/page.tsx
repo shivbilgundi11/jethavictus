@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import { aboutContent } from "@/lib/content/about";
+import { getPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = getPageMetadata("about");
 
 export default function AboutPage() {
   const {
@@ -19,9 +24,12 @@ export default function AboutPage() {
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
       <section className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]">
-        <img
+        <Image
           src={hero.image}
           alt={hero.imageAlt}
+          fill
+          sizes="100vw"
+          preload
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -156,10 +164,11 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
           <div className="bg-brand-navy grid overflow-hidden lg:grid-cols-[1.05fr_0.95fr]">
             <div className="relative min-h-[520px] lg:min-h-[720px]">
-              <img
+              <Image
                 src={identity.image}
                 alt={identity.imageAlt}
-                loading="lazy"
+                fill
+                sizes="100vw"
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
@@ -362,10 +371,11 @@ export default function AboutPage() {
       <section className="bg-surface-page py-20 lg:py-28">
         <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
           <div className="relative min-h-[560px] overflow-hidden">
-            <img
+            <Image
               src={leadershipStandard.image}
               alt={leadershipStandard.imageAlt}
-              loading="lazy"
+              fill
+              sizes="100vw"
               className="absolute inset-0 h-full w-full object-cover"
             />
 
@@ -475,10 +485,11 @@ export default function AboutPage() {
 
       {/* Closing Statement */}
       <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
-        <img
+        <Image
           src={closingStatement.image}
           alt={closingStatement.imageAlt}
-          loading="lazy"
+          fill
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
 

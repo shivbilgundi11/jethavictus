@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowDown,
@@ -19,12 +20,9 @@ import {
   type ContactMethod,
   type ContactMethodIcon,
 } from "@/lib/content/contact";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Contact Jethavictus Solutions for enterprise technology consulting, partnerships, careers, and regional office information.",
-};
+export const metadata: Metadata = getPageMetadata("contact");
 
 const contactMethodIcons: Record<ContactMethodIcon, LucideIcon> = {
   email: Mail,
@@ -49,9 +47,12 @@ export default function ContactPage() {
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
       <section className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]">
-        <img
+        <Image
           src={hero.image}
           alt={hero.imageAlt}
+          fill
+          sizes="100vw"
+          preload
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -209,10 +210,11 @@ export default function ContactPage() {
                 className="group border-line-default bg-surface-page border"
               >
                 <div className="bg-surface-muted relative aspect-[16/9] overflow-hidden">
-                  <img
+                  <Image
                     src={office.image}
                     alt={office.imageAlt}
-                    loading="lazy"
+                    fill
+                    sizes="100vw"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
 
@@ -375,10 +377,11 @@ export default function ContactPage() {
 
       {/* Visit section */}
       <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
-        <img
+        <Image
           src={visitSection.image}
           alt={visitSection.imageAlt}
-          loading="lazy"
+          fill
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
 

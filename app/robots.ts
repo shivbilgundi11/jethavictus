@@ -1,0 +1,14 @@
+import type { MetadataRoute } from "next";
+
+import { siteContent } from "@/lib/content/site";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: new URL("/sitemap.xml", siteContent.siteUrl).toString(),
+    host: siteContent.siteUrl,
+  };
+}

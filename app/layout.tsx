@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { siteContent } from "@/lib/content/site";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import "./globals.css";
@@ -17,12 +18,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteContent.siteUrl),
+  applicationName: "Jethavictus Solutions",
   title: {
     default: "Jethavictus Solutions",
     template: "%s | Jethavictus Solutions",
   },
   description:
     "High-performance technology consulting across AI, cloud, cybersecurity, ERP, blockchain, IoT, and data science.",
+  keywords: [...siteContent.seo.keywords],
+  authors: [{ name: "Jethavictus Solutions" }],
+  creator: "Jethavictus Solutions",
+  publisher: "Jethavictus Solutions",
+  category: "Technology consulting",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteContent.siteUrl,
+    siteName: "Jethavictus Solutions",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
