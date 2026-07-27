@@ -1,1146 +1,892 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
-import { Manrope, Sora } from "next/font/google";
-import {
-  ArrowDown,
-  ArrowLeft,
-  ArrowRight,
-  Blocks,
-  Bot,
-  Building2,
-  Check,
-  Cloud,
-  Cpu,
-  Factory,
-  Globe2,
-  HeartPulse,
-  Landmark,
-  Layers3,
-  Menu,
-  MoveUpRight,
-  RadioTower,
-  ServerCog,
-  ShieldCheck,
-  Target,
-  Workflow,
-  X,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  display: "swap",
-});
-
-const navigation = [
-  { label: "Company", href: "#company" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Execution", href: "#execution" },
-  { label: "Industries", href: "#industries" },
-];
-
-type Service = {
-  number: string;
-  title: string;
-  shortTitle: string;
-  statement: string;
-  description: string;
-  capabilities: string[];
-  image: string;
-  icon: LucideIcon;
-};
-
-type Industry = {
-  title: string;
-  shortTitle: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-};
-
-const services: Service[] = [
-  {
-    number: "01",
-    title: "Strategic IT Consulting",
-    shortTitle: "Strategic IT",
-    statement: "Strategy engineered for execution.",
-    description:
-      "Jethavictus assesses complex technology environments, identifies critical capability gaps, and creates an executable roadmap aligned with business priorities, operating realities, and growth.",
-    capabilities: [
-      "Infrastructure assessment",
-      "Technology roadmaps",
-      "System integration",
-      "Legacy modernization",
-      "Transformation execution",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2400&q=90",
-    icon: ServerCog,
-  },
-  {
-    number: "02",
-    title: "Artificial Intelligence & Machine Learning",
-    shortTitle: "AI & ML",
-    statement: "Intelligence built for real operations.",
-    description:
-      "We design production-ready AI systems that automate intelligence-heavy work, expose predictive insights, and improve decision-making at enterprise scale.",
-    capabilities: [
-      "AI strategy",
-      "Model architecture",
-      "Machine learning pipelines",
-      "Natural language processing",
-      "Predictive intelligence",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2400&q=90",
-    icon: Bot,
-  },
-  {
-    number: "03",
-    title: "Cloud Architecture & AWS Solutions",
-    shortTitle: "Cloud & AWS",
-    statement: "Cloud foundations without compromise.",
-    description:
-      "Secure and resilient cloud environments engineered to increase digital velocity while protecting performance, governance, reliability, and cost control.",
-    capabilities: [
-      "AWS architecture",
-      "Cloud migration",
-      "Hybrid cloud strategy",
-      "Cloud-native applications",
-      "DevOps and governance",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2400&q=90",
-    icon: Cloud,
-  },
-  {
-    number: "04",
-    title: "Cybersecurity & Risk Management",
-    shortTitle: "Cybersecurity",
-    statement: "Resilience engineered into every layer.",
-    description:
-      "Comprehensive security frameworks that protect critical assets, strengthen regulatory readiness, and prepare organizations to respond decisively to sophisticated threats.",
-    capabilities: [
-      "Zero-trust architecture",
-      "Threat modeling",
-      "Penetration testing",
-      "Compliance management",
-      "Incident response",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=2400&q=90",
-    icon: ShieldCheck,
-  },
-  {
-    number: "05",
-    title: "Enterprise ERP Solutions",
-    shortTitle: "Enterprise ERP",
-    statement: "One enterprise. One operational truth.",
-    description:
-      "Connected ERP environments that unify departments, standardize processes, eliminate information silos, and provide organization-wide visibility.",
-    capabilities: [
-      "ERP selection",
-      "System implementation",
-      "Process reengineering",
-      "Data migration",
-      "Managed optimization",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2400&q=90",
-    icon: Layers3,
-  },
-  {
-    number: "06",
-    title: "Blockchain & Emerging Technologies",
-    shortTitle: "Blockchain",
-    statement: "Trust engineered into transactions.",
-    description:
-      "Enterprise blockchain and decentralized systems that introduce verifiable trust, transparency, and intelligent automation across complex networks.",
-    capabilities: [
-      "Smart contracts",
-      "Blockchain architecture",
-      "DApp development",
-      "Contract auditing",
-      "Digital asset strategy",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&w=2400&q=90",
-    icon: Blocks,
-  },
-  {
-    number: "07",
-    title: "IoT & Data Science",
-    shortTitle: "IoT & Data",
-    statement: "Turn physical operations into intelligence.",
-    description:
-      "Connected devices, real-time data pipelines, and advanced analytics that expose operational insights and unlock new revenue opportunities.",
-    capabilities: [
-      "IoT platforms",
-      "Edge computing",
-      "Streaming analytics",
-      "Data science",
-      "Data engineering",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2400&q=90",
-    icon: RadioTower,
-  },
-];
-
-const differentiators = [
-  {
-    number: "01",
-    title: "Enterprise depth",
-    description:
-      "Specialized expertise across AI, cloud, cybersecurity, ERP, IoT, blockchain, and modernization.",
-  },
-  {
-    number: "02",
-    title: "Senior-led execution",
-    description:
-      "Experienced specialists lead strategy, architecture, communication, and delivery from the beginning.",
-  },
-  {
-    number: "03",
-    title: "Outcome ownership",
-    description:
-      "Success is measured by operational and commercial results, not activity or hours billed.",
-  },
-  {
-    number: "04",
-    title: "End-to-end accountability",
-    description:
-      "One accountable partner from assessment and architecture through deployment and optimization.",
-  },
-  {
-    number: "05",
-    title: "Built for complexity",
-    description:
-      "Disciplined methods developed for critical environments, significant dependencies, and high stakes.",
-  },
-  {
-    number: "06",
-    title: "Velocity with discipline",
-    description:
-      "Decisive delivery without sacrificing security, governance, reliability, or implementation quality.",
-  },
-];
-
-const executionSteps = [
-  {
-    number: "01",
-    title: "Discover",
-    statement: "Expose the complete operating reality.",
-    description:
-      "We examine the business model, technology estate, operating constraints, dependencies, risks, and competitive environment before recommending a direction.",
-    details: [
-      "Leadership and stakeholder alignment",
-      "Technology landscape assessment",
-      "Capability and process analysis",
-      "Risk and dependency mapping",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=90",
-  },
-  {
-    number: "02",
-    title: "Design",
-    statement: "Convert ambition into an executable system.",
-    description:
-      "We architect a precise solution aligned with your requirements, internal capabilities, regulatory environment, timeline, and definition of success.",
-    details: [
-      "Solution and enterprise architecture",
-      "Delivery roadmap",
-      "Governance and measurement",
-      "Implementation planning",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=90",
-  },
-  {
-    number: "03",
-    title: "Deploy",
-    statement: "Create momentum without losing control.",
-    description:
-      "Senior specialists execute with agile velocity, transparent communication, visible accountability, and disciplined quality controls.",
-    details: [
-      "Senior-led execution",
-      "Iterative implementation",
-      "Testing and security validation",
-      "Stakeholder communication",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2200&q=90",
-  },
-  {
-    number: "04",
-    title: "Deliver",
-    statement: "Own the outcome beyond launch.",
-    description:
-      "We measure results, transfer knowledge, optimize continuously, and remain accountable for the performance of what we build.",
-    details: [
-      "Outcome measurement",
-      "Team enablement",
-      "Performance optimization",
-      "Long-term support",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2200&q=90",
-  },
-];
-
-const industries: Industry[] = [
-  {
-    title: "Financial Services & Banking",
-    shortTitle: "Finance",
-    description:
-      "Secure modernization, decision intelligence, regulatory readiness, and resilient digital platforms.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=90",
-    icon: Landmark,
-  },
-  {
-    title: "Healthcare & Life Sciences",
-    shortTitle: "Healthcare",
-    description:
-      "Protected data, intelligent workflows, connected operations, and compliant technology ecosystems.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2400&q=90",
-    icon: HeartPulse,
-  },
-  {
-    title: "Energy & Utilities",
-    shortTitle: "Energy",
-    description:
-      "Connected infrastructure, predictive maintenance, operational intelligence, and cyber resilience.",
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2400&q=90",
-    icon: Zap,
-  },
-  {
-    title: "Retail & E-Commerce",
-    shortTitle: "Retail",
-    description:
-      "Scalable commerce, customer intelligence, integrated platforms, and responsive digital experiences.",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2400&q=90",
-    icon: Globe2,
-  },
-  {
-    title: "Manufacturing & Supply Chain",
-    shortTitle: "Manufacturing",
-    description:
-      "IoT systems, ERP modernization, forecasting, automation, and real-time operational visibility.",
-    image:
-      "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=2400&q=90",
-    icon: Factory,
-  },
-  {
-    title: "Technology & SaaS",
-    shortTitle: "Technology",
-    description:
-      "Cloud-native platforms, AI capabilities, product modernization, DevOps, and scalable architecture.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2400&q=90",
-    icon: Cpu,
-  },
-  {
-    title: "Government & Public Sector",
-    shortTitle: "Public Sector",
-    description:
-      "Secure transformation, accessible digital services, modern governance, and reliable delivery.",
-    image:
-      "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=2400&q=90",
-    icon: Building2,
-  },
-];
-
-function Logo({ light = false }: { light?: boolean }) {
-  return (
-    <a href="#" className="flex items-center gap-3">
-      <span
-        className={`font-display text-[24px] font-semibold tracking-[-0.08em] ${
-          light ? "text-white" : "text-brand-navy"
-        }`}
-      >
-        J
-      </span>
-
-      <span className={`h-8 w-px ${light ? "bg-white/30" : "bg-brand-line"}`} />
-
-      <span
-        className={`font-display text-[13px] leading-[1.05] font-semibold tracking-[-0.035em] ${
-          light ? "text-white" : "text-brand-navy"
-        }`}
-      >
-        <span className="block">JETHAVICTUS</span>
-
-        <span
-          className={`mt-1 block text-[8px] font-medium tracking-[0.28em] ${
-            light ? "text-white/45" : "text-brand-slate"
-          }`}
-        >
-          SOLUTIONS
-        </span>
-      </span>
-    </a>
-  );
-}
-
-function EditorialLabel({
-  children,
-  light = false,
-}: {
-  children: ReactNode;
-  light?: boolean;
-}) {
-  return (
-    <div
-      className={`flex items-center gap-4 text-[10px] font-bold tracking-[0.22em] uppercase ${
-        light ? "text-brand-cyan" : "text-brand-cobalt"
-      }`}
-    >
-      <span
-        className={`h-px w-10 ${light ? "bg-brand-cyan" : "bg-brand-cobalt"}`}
-      />
-
-      {children}
-    </div>
-  );
-}
+import { useState } from "react";
+import { homeContent } from "@/lib/content/home";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [headerSolid, setHeaderSolid] = useState(false);
-  const [activeService, setActiveService] = useState(0);
-  const [activeExecution, setActiveExecution] = useState(0);
-  const [activeIndustry, setActiveIndustry] = useState(0);
 
-  useEffect(() => {
-    const onScroll = () => {
-      setHeaderSolid(window.scrollY > 70);
-    };
-
-    onScroll();
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const selectedService = services[activeService];
-  const SelectedServiceIcon = selectedService.icon;
-
-  const selectedExecution = executionSteps[activeExecution];
-
-  const selectedIndustry = industries[activeIndustry];
-  const SelectedIndustryIcon = selectedIndustry.icon;
-
-  const goToPreviousService = () => {
-    setActiveService((current) =>
-      current === 0 ? services.length - 1 : current - 1,
-    );
-  };
-
-  const goToNextService = () => {
-    setActiveService((current) =>
-      current === services.length - 1 ? 0 : current + 1,
-    );
-  };
+  const {
+    brand,
+    header,
+    hero,
+    prioritiesSection,
+    aboutSection,
+    capabilitiesSection,
+    missionVisionSection,
+    differentiatorsSection,
+    approachSection,
+    industriesSection,
+    commitmentSection,
+    contactSection,
+    footer,
+  } = homeContent;
 
   return (
-    <main
-      className={`${manrope.variable} ${sora.variable} bg-background text-foreground selection:bg-brand-cyan selection:text-brand-navy min-h-screen overflow-x-hidden font-sans`}
-    >
-      <style jsx global>{`
-        @keyframes capability-marquee {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        .capability-marquee {
-          animation: capability-marquee 28s linear infinite;
-        }
-
-        .capability-marquee:hover {
-          animation-play-state: paused;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .capability-marquee {
-            animation: none;
-          }
-        }
-      `}</style>
-
+    <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Header */}
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          headerSolid
-            ? "border-brand-line/70 bg-brand-paper/95 text-brand-navy border-b backdrop-blur-xl"
-            : "bg-transparent text-white"
-        }`}
-      >
-        <div className="mx-auto flex h-22 max-w-[1540px] items-center justify-between px-5 sm:px-8 lg:px-12">
-          <Logo light={!headerSolid} />
+      <header className="bg-surface-page relative z-50">
+        <div className="border-line-subtle bg-surface-soft hidden border-b lg:block">
+          <div className="mx-auto flex h-9 w-full max-w-[1440px] items-center justify-end px-5 sm:px-8 lg:px-12">
+            <nav
+              aria-label="Utility navigation"
+              className="text-content-muted flex items-center gap-7 text-[11px] font-semibold"
+            >
+              {header.utilityNavigation.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
 
-          <nav className="hidden items-center gap-10 lg:flex">
-            {navigation.map((item) => (
+        <div className="mx-auto flex h-[74px] w-full max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
+          <a
+            href="#top"
+            aria-label={`${brand.name} ${brand.suffix} home`}
+            className="flex items-center gap-3"
+          >
+            <span className="border-brand-navy relative flex h-10 w-10 items-center justify-center border-2">
+              <span className="text-brand-navy text-sm font-black tracking-[-0.08em]">
+                JV
+              </span>
+
+              <span className="border-surface-page bg-brand-blue absolute -right-1 -bottom-1 h-3 w-3 border-2" />
+            </span>
+
+            <span className="leading-none">
+              <span className="text-brand-navy block text-[15px] font-extrabold tracking-[0.08em]">
+                {brand.name}
+              </span>
+
+              <span className="text-content-muted mt-1 block text-[9px] font-bold tracking-[0.38em]">
+                {brand.suffix}
+              </span>
+            </span>
+          </a>
+
+          <nav
+            aria-label="Primary navigation"
+            className="hidden items-center gap-8 xl:flex"
+          >
+            {header.primaryNavigation.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="relative py-3 text-[12px] font-bold after:absolute after:bottom-1 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all hover:after:w-full"
+                className="group text-content-secondary hover:text-brand-blue flex items-center gap-1 text-[13px] font-semibold transition-colors"
               >
                 {item.label}
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5"
+                >
+                  <path
+                    d="m6 9 6 6 6-6"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </a>
             ))}
           </nav>
 
-          <a
-            href="#contact"
-            className={`group hidden items-center gap-4 text-[12px] font-bold lg:flex ${
-              headerSolid ? "text-brand-navy" : "text-white"
-            }`}
-          >
-            Start a mission
-            <MoveUpRight
-              size={17}
-              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              aria-label="Search"
+              className="text-content-muted hover:bg-surface-muted hover:text-brand-blue hidden h-11 w-11 items-center justify-center transition-colors sm:flex"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="h-5 w-5"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="6.5"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                />
+                <path
+                  d="m16 16 4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
 
-          <button
-            type="button"
-            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-            onClick={() => setMenuOpen((current) => !current)}
-            className="grid h-11 w-11 place-items-center lg:hidden"
-          >
-            {menuOpen ? <X /> : <Menu />}
-          </button>
+            <a
+              href={header.cta.href}
+              className="bg-brand-blue text-content-inverse hover:bg-brand-blue-dark hidden items-center gap-3 px-5 py-3 text-xs font-bold transition-colors md:flex"
+            >
+              {header.cta.label}
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="h-4 w-4"
+              >
+                <path
+                  d="M5 12h13M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((current) => !current)}
+              className="text-brand-navy flex h-11 w-11 items-center justify-center xl:hidden"
+            >
+              {menuOpen ? (
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-6 w-6"
+                >
+                  <path
+                    d="m6 6 12 12M18 6 6 18"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-6 w-6"
+                >
+                  <path
+                    d="M4 7h16M4 12h16M4 17h16"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
-        {menuOpen ? (
-          <div className="border-brand-line bg-brand-paper text-brand-navy border-t px-5 pb-7 shadow-xl lg:hidden">
-            <nav className="mx-auto flex max-w-[1540px] flex-col">
-              {navigation.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="border-brand-line font-display flex items-center justify-between border-b py-5 text-xl font-semibold"
-                >
-                  {item.label}
-                  <ArrowRight size={18} />
-                </a>
-              ))}
+        {menuOpen && (
+          <div className="border-line-subtle bg-surface-page shadow-navigation absolute inset-x-0 top-full border-t xl:hidden">
+            <div className="mx-auto w-full max-w-[1440px] px-5 py-4 sm:px-8 lg:px-12">
+              <nav className="flex flex-col">
+                {header.primaryNavigation.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="border-line-subtle text-brand-navy flex items-center justify-between border-b py-5 text-lg font-semibold"
+                  >
+                    {item.label}
 
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="bg-brand-cobalt mt-6 flex h-14 items-center justify-between px-5 font-bold text-white"
-              >
-                Start a mission
-                <MoveUpRight size={18} />
-              </a>
-            </nav>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        d="M5 12h13M13 6l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                ))}
+
+                <a
+                  href={header.cta.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="bg-brand-blue text-content-inverse mt-5 flex items-center justify-between px-5 py-4 text-sm font-bold"
+                >
+                  {header.cta.label}
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      d="M5 12h13M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </nav>
+            </div>
           </div>
-        ) : null}
+        )}
       </header>
 
-      {/* Editorial cover */}
-      <section className="bg-brand-cream relative min-h-212.5 overflow-hidden lg:min-h-screen">
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[61%]">
-          <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2500&q=92"
-            alt="Enterprise technology infrastructure"
-            className="h-full w-full object-cover"
-          />
-
-          <div className="bg-brand-deep/45 lg:bg-brand-deep/10 absolute inset-0" />
-
-          <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(245,241,232,1)_0%,rgba(245,241,232,0.94)_12%,rgba(245,241,232,0)_48%)] lg:block" />
-        </div>
-
-        <div
-          className="bg-brand-cobalt/10 absolute inset-y-0 right-0 hidden w-[64%] lg:block"
-          style={{
-            clipPath: "polygon(22% 0, 100% 0, 100% 100%, 0 100%)",
-          }}
+      {/* Hero */}
+      <section
+        id="top"
+        className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]"
+      >
+        <img
+          src={hero.image}
+          alt={hero.imageAlt}
+          className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="relative mx-auto flex min-h-212.5 max-w-[1540px] items-end px-5 pt-36 pb-16 sm:px-8 lg:min-h-screen lg:items-center lg:px-12 lg:pb-12">
-          <div className="relative z-10 max-w-215">
-            <p className="text-brand-cyan lg:text-brand-cobalt text-[10px] font-bold tracking-[0.23em] uppercase">
-              High-performance technology consulting
+        <div className="bg-brand-navy/15 absolute inset-0" />
+
+        <div className="from-brand-navy-deep/95 via-brand-navy/70 absolute inset-0 bg-gradient-to-r to-transparent" />
+
+        <div className="from-brand-navy/55 absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t to-transparent" />
+
+        <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1440px] items-center px-5 py-20 sm:min-h-[680px] sm:px-8 lg:min-h-[740px] lg:px-12">
+          <div className="text-content-inverse max-w-4xl">
+            <p className="text-content-inverse/80 mb-6 text-xs font-bold tracking-[0.24em] uppercase">
+              {hero.label}
             </p>
 
-            <h1 className="font-display lg:text-brand-navy mt-8 text-[55px] leading-[0.91] font-semibold tracking-[-0.075em] text-white sm:text-[76px] lg:text-[92px] xl:text-[108px]">
-              Engineer the
-              <span className="text-brand-cyan lg:text-brand-cobalt block">
-                advantage.
+            <h1 className="max-w-4xl text-5xl leading-[0.98] font-light tracking-[-0.045em] sm:text-6xl lg:text-[88px]">
+              {hero.title}
+
+              <span className="block font-semibold">
+                {hero.highlightedTitle}
               </span>
             </h1>
 
-            <p className="lg:text-brand-slate mt-9 max-w-165 text-lg leading-8 text-white/75 sm:text-xl">
-              Jethavictus transforms complex enterprise technology into scalable
-              systems, stronger operations, and measurable competitive progress.
+            <p className="text-content-inverse/85 mt-8 max-w-2xl text-lg leading-8 sm:text-xl">
+              {hero.description}
             </p>
 
-            <div className="mt-11 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#capabilities"
-                className="group bg-brand-cobalt hover:bg-brand-navy inline-flex min-h-14 items-center gap-9 px-7 text-sm font-bold text-white transition-colors"
+                href={hero.primaryCta.href}
+                className="group bg-surface-page text-brand-navy hover:bg-surface-muted inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
               >
-                Explore capabilities
-                <ArrowRight
-                  size={18}
-                  className="transition-transform group-hover:translate-x-1"
-                />
+                {hero.primaryCta.label}
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                >
+                  <path
+                    d="M5 12h13M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </a>
 
               <a
-                href="#company"
-                className="group lg:text-brand-navy inline-flex items-center gap-4 text-sm font-bold text-white"
+                href={hero.secondaryCta.href}
+                className="group border-line-inverse text-content-inverse hover:bg-surface-page hover:text-brand-navy inline-flex items-center justify-between gap-10 border bg-transparent px-6 py-4 text-sm font-bold transition-colors"
               >
-                Discover Jethavictus
-                <ArrowDown
-                  size={17}
-                  className="transition-transform group-hover:translate-y-1"
-                />
+                {hero.secondaryCta.label}
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                >
+                  <path
+                    d="M5 12h13M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </a>
             </div>
           </div>
-
-          <div className="bg-brand-gold text-brand-navy absolute right-0 bottom-0 z-20 max-w-140 px-7 py-8 sm:px-10 lg:right-12 lg:px-12">
-            <p className="font-display text-[22px] leading-8 font-semibold tracking-[-0.035em] sm:text-[27px]">
-              “We don&apos;t just consult. We conquer complexity.”
-            </p>
-          </div>
         </div>
+
+        <a
+          href="#priorities"
+          aria-label="Continue to the next section"
+          className="bg-surface-page text-brand-navy hover:bg-brand-blue hover:text-content-inverse absolute right-0 bottom-0 hidden h-20 w-20 items-center justify-center transition-colors md:flex"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+            className="h-7 w-7"
+          >
+            <path
+              d="m6 9 6 6 6-6"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
       </section>
 
-      {/* Moving capability line */}
-      <section className="bg-brand-cobalt overflow-hidden text-white">
-        <div className="capability-marquee flex min-w-max">
-          {[...services, ...services].map((service, index) => (
-            <button
-              key={`${service.shortTitle}-${index}`}
-              type="button"
-              onClick={() => setActiveService(index % services.length)}
-              className="group hover:bg-brand-navy flex h-21 items-center gap-5 border-r border-white/20 px-8 transition-colors sm:px-11"
-            >
-              <span className="bg-brand-gold h-2 w-2 rotate-45" />
-
-              <span className="font-display text-sm font-semibold">
-                {service.shortTitle}
-              </span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* Company manifesto */}
+      {/* Priorities */}
       <section
-        id="company"
-        className="bg-brand-paper relative scroll-mt-20 overflow-hidden"
+        id="priorities"
+        className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="bg-brand-cyan-soft absolute top-0 right-0 hidden h-full w-[27%] lg:block" />
-
-        <div className="mx-auto max-w-[1540px] px-5 py-28 sm:px-8 lg:px-12 lg:py-44">
-          <div className="relative grid gap-16 lg:grid-cols-[1.3fr_0.7fr] lg:gap-24">
+        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+          <div className="border-line-default flex flex-col justify-between gap-6 border-b pb-8 md:flex-row md:items-end">
             <div>
-              <p className="font-display text-brand-navy max-w-270 text-[41px] leading-[1.09] font-semibold tracking-[-0.055em] sm:text-[58px] lg:text-[70px]">
-                Technology should not merely support the enterprise.
-                <span className="text-brand-cobalt">
-                  {" "}
-                  It should multiply what the enterprise can achieve.
-                </span>
+              <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
+                {prioritiesSection.label}
               </p>
 
-              <div className="border-brand-line mt-16 grid gap-10 border-t pt-10 md:grid-cols-2 md:gap-16">
-                <p className="text-brand-slate text-lg leading-8">
-                  Jethavictus brings together strategic thinkers, systems
-                  architects, and senior technology specialists committed to
-                  transforming how enterprises operate, compete, and grow.
-                </p>
-
-                <p className="text-brand-slate text-lg leading-8">
-                  We do not offer generic blueprints. Every engagement is built
-                  around a defined objective, accountable leadership, and a
-                  measurable interpretation of victory.
-                </p>
-              </div>
+              <h2 className="text-brand-navy mt-4 text-4xl font-light tracking-[-0.035em] sm:text-5xl">
+                {prioritiesSection.title}
+              </h2>
             </div>
 
-            <div className="relative min-h-105 lg:min-h-165">
+            <p className="text-content-muted max-w-md text-base leading-7">
+              {prioritiesSection.description}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {prioritiesSection.items.map((item) => (
+              <article
+                key={item.title}
+                className="group border-line-subtle bg-surface-elevated flex h-full flex-col border"
+              >
+                <div className="bg-surface-muted relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <p className="text-brand-blue text-[11px] font-bold tracking-[0.2em] uppercase">
+                    {item.category}
+                  </p>
+
+                  <h3 className="text-brand-navy mt-4 text-2xl leading-tight font-medium tracking-[-0.025em]">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-content-muted mt-4 flex-1 text-sm leading-7">
+                    {item.description}
+                  </p>
+
+                  <a
+                    href={item.href}
+                    className="text-brand-blue mt-7 flex items-center gap-3 text-sm font-bold"
+                  >
+                    {item.linkLabel}
+
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    >
+                      <path
+                        d="M5 12h13M13 6l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="bg-surface-muted scroll-mt-24 py-20 lg:py-32"
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+          <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+            <div>
+              <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
+                {aboutSection.label}
+              </p>
+
+              <h2 className="text-brand-navy mt-5 text-4xl leading-[1.05] font-light tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+                {aboutSection.title}
+
+                <span className="block font-semibold">
+                  {aboutSection.highlightedTitle}
+                </span>
+              </h2>
+            </div>
+
+            <div className="text-content-secondary space-y-7 text-lg leading-8">
+              {aboutSection.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+
+              <p className="text-brand-navy font-medium">
+                {aboutSection.emphasizedParagraph}
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-brand-navy mt-20 grid overflow-hidden lg:grid-cols-2">
+            <div className="relative min-h-[420px]">
               <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=90"
-                alt="Senior technology consultants collaborating"
+                src={aboutSection.feature.image}
+                alt={aboutSection.feature.imageAlt}
+                loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover"
               />
+            </div>
 
-              <div className="from-brand-deep/75 absolute inset-0 bg-linear-to-t via-transparent to-transparent" />
-
-              <div className="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
-                <p className="text-brand-cyan text-[10px] font-bold tracking-[0.21em] uppercase">
-                  Technology as a force multiplier
+            <div className="text-content-inverse flex items-center p-8 sm:p-12 lg:p-16">
+              <div>
+                <p className="text-brand-sky text-xs font-bold tracking-[0.2em] uppercase">
+                  {aboutSection.feature.label}
                 </p>
 
-                <p className="font-display mt-5 text-[27px] leading-[1.22] font-semibold tracking-[-0.04em]">
-                  Strategy, architecture, and execution operating as one force.
+                <h3 className="mt-5 text-3xl leading-tight font-light sm:text-4xl">
+                  {aboutSection.feature.title}
+                </h3>
+
+                <p className="text-content-inverse/75 mt-6 max-w-xl text-base leading-8">
+                  {aboutSection.feature.description}
                 </p>
+
+                <a
+                  href={aboutSection.feature.cta.href}
+                  className="border-line-inverse mt-8 inline-flex items-center gap-3 border-b pb-2 text-sm font-bold"
+                >
+                  {aboutSection.feature.cta.label}
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      d="M5 12h13M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Immersive services stage */}
+      {/* Capabilities */}
       <section
         id="capabilities"
-        className="bg-brand-deep relative min-h-237.5 scroll-mt-20 overflow-hidden text-white"
+        className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <img
-          key={selectedService.image}
-          src={selectedService.image}
-          alt={selectedService.title}
-          className="absolute inset-0 h-full w-full object-cover transition duration-700"
-        />
-
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,19,29,0.97)_0%,rgba(4,19,29,0.88)_44%,rgba(4,19,29,0.35)_78%,rgba(4,19,29,0.5)_100%)]" />
-
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,19,29,0.28)_0%,rgba(4,19,29,0.18)_45%,rgba(4,19,29,0.92)_100%)]" />
-
-        <div className="relative mx-auto flex min-h-237.5 max-w-[1540px] flex-col px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="flex flex-col justify-between gap-9 lg:flex-row lg:items-end">
+        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+          <div className="border-line-default grid gap-8 border-b pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
-              <EditorialLabel light>Core capabilities</EditorialLabel>
+              <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
+                {capabilitiesSection.label}
+              </p>
 
-              <h2 className="font-display mt-8 max-w-217.5 text-[44px] leading-[1.03] font-semibold tracking-[-0.06em] sm:text-[61px] lg:text-[76px]">
-                One strategy.
-                <span className="text-brand-cyan block">
-                  Seven connected practices.
-                </span>
+              <h2 className="text-brand-navy mt-5 max-w-4xl text-4xl leading-tight font-light tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+                {capabilitiesSection.title}
               </h2>
             </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                aria-label="Previous service"
-                onClick={goToPreviousService}
-                className="hover:text-brand-navy grid h-12 w-12 place-items-center border border-white/30 transition-colors hover:bg-white"
-              >
-                <ArrowLeft size={18} />
-              </button>
-
-              <button
-                type="button"
-                aria-label="Next service"
-                onClick={goToNextService}
-                className="hover:text-brand-navy grid h-12 w-12 place-items-center border border-white/30 transition-colors hover:bg-white"
-              >
-                <ArrowRight size={18} />
-              </button>
-            </div>
+            <p className="text-content-muted max-w-xl text-base leading-7 lg:justify-self-end">
+              {capabilitiesSection.description}
+            </p>
           </div>
 
-          <div className="mt-14 flex gap-7 overflow-x-auto border-b border-white/25 pb-5">
-            {services.map((service, index) => {
-              const isActive = activeService === index;
-
-              return (
-                <button
-                  key={service.title}
-                  type="button"
-                  onMouseEnter={() => setActiveService(index)}
-                  onFocus={() => setActiveService(index)}
-                  onClick={() => setActiveService(index)}
-                  className={`relative shrink-0 pb-4 text-left transition-colors ${
-                    isActive ? "text-white" : "text-white/42 hover:text-white"
+          <div className="mt-10 grid gap-x-7 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+            {capabilitiesSection.services.map((service, index) => (
+              <article
+                key={service.number}
+                className={`group ${index === 0 ? "lg:col-span-2" : ""}`}
+              >
+                <div
+                  className={`bg-surface-muted relative overflow-hidden ${
+                    index === 0
+                      ? "aspect-[16/9] lg:aspect-[16/7]"
+                      : "aspect-[16/10]"
                   }`}
                 >
-                  <span className="block text-[9px] font-bold tracking-[0.18em]">
-                    {service.number}
-                  </span>
-
-                  <span className="font-display mt-2 block text-lg font-semibold">
-                    {service.shortTitle}
-                  </span>
-
-                  <span
-                    className={`bg-brand-gold absolute bottom-0 left-0 h-0.75 transition-all ${
-                      isActive ? "w-full" : "w-0"
-                    }`}
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
-                </button>
-              );
-            })}
-          </div>
 
-          <div className="mt-auto grid gap-12 pt-20 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
-            <div>
-              <SelectedServiceIcon
-                size={31}
-                strokeWidth={1.35}
-                className="text-brand-gold"
-              />
+                  <div className="bg-brand-navy text-content-inverse absolute top-0 left-0 px-4 py-3 text-xs font-bold">
+                    {service.number}
+                  </div>
+                </div>
 
-              <p className="font-display mt-8 max-w-130 text-[31px] leading-[1.18] font-semibold tracking-[-0.04em] sm:text-[40px]">
-                {selectedService.statement}
-              </p>
-            </div>
+                <div className="border-line-default border-b py-6">
+                  <h3 className="text-brand-navy text-2xl font-medium tracking-[-0.025em]">
+                    {service.title}
+                  </h3>
 
-            <div>
-              <span className="text-brand-cyan text-[10px] font-bold tracking-[0.2em] uppercase">
-                Capability {selectedService.number}
-              </span>
+                  <p className="text-content-muted mt-4 text-sm leading-7">
+                    {service.description}
+                  </p>
 
-              <h3 className="font-display mt-5 max-w-212.5 text-[38px] leading-[1.05] font-semibold tracking-tighter sm:text-[52px]">
-                {selectedService.title}
-              </h3>
+                  <ul className="mt-5 space-y-2.5">
+                    {service.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="text-content-secondary flex gap-3 text-sm leading-6"
+                      >
+                        <span className="bg-brand-blue mt-[9px] h-1.5 w-1.5 shrink-0" />
 
-              <p className="mt-7 max-w-195 text-lg leading-8 text-white/65">
-                {selectedService.description}
-              </p>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-              <div className="mt-9 flex flex-wrap gap-x-7 gap-y-4 border-t border-white/25 pt-7">
-                {selectedService.capabilities.map((capability) => (
-                  <span
-                    key={capability}
-                    className="flex items-center gap-3 text-sm font-semibold text-white/75"
+                  <a
+                    href={service.href}
+                    className="text-brand-blue mt-6 inline-flex items-center gap-3 text-sm font-bold"
                   >
-                    <span className="bg-brand-gold h-1.5 w-1.5" />
-                    {capability}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    {service.linkLabel}
 
-      {/* Proof rail */}
-      <section className="bg-brand-cream overflow-hidden py-24 lg:py-36">
-        <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-14 lg:grid-cols-[0.55fr_1.45fr] lg:gap-24">
-            <div>
-              <EditorialLabel>Why Jethavictus</EditorialLabel>
-
-              <h2 className="font-display text-brand-navy mt-8 max-w-130 text-[42px] leading-[1.06] font-semibold tracking-[-0.055em] sm:text-[56px]">
-                Built for the moments that matter.
-              </h2>
-            </div>
-
-            <div className="overflow-x-auto">
-              <div className="border-brand-line flex min-w-max border-l">
-                {differentiators.map((item) => (
-                  <article
-                    key={item.title}
-                    className="group border-brand-line w-[320px] border-r px-7 py-3 sm:w-92.5 sm:px-9"
-                  >
-                    <span className="font-display text-brand-cobalt/15 group-hover:text-brand-cobalt text-[70px] leading-none font-semibold tracking-[-0.08em] transition-colors">
-                      {item.number}
-                    </span>
-
-                    <h3 className="font-display text-brand-navy mt-14 text-[25px] font-semibold tracking-[-0.035em]">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-brand-slate mt-5 leading-7">
-                      {item.description}
-                    </p>
-
-                    <span className="bg-brand-cobalt mt-9 block h-px w-10 transition-all duration-300 group-hover:w-full" />
-                  </article>
-                ))}
-              </div>
-            </div>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    >
+                      <path
+                        d="M5 12h13M13 6l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Mission and vision */}
-      <section className="bg-brand-cobalt relative overflow-hidden text-white">
-        <div className="absolute inset-y-0 right-0 hidden w-[43%] lg:block">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1900&q=90"
-            alt="Technology team focused on enterprise delivery"
-            className="h-full w-full object-cover"
-          />
-
-          <div className="bg-brand-cobalt/25 absolute inset-0" />
-          <div className="from-brand-cobalt via-brand-cobalt/30 absolute inset-0 bg-linear-to-r to-transparent" />
-        </div>
-
-        <div className="relative mx-auto max-w-[1540px] px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
-          <div className="max-w-205">
-            <p className="text-brand-gold text-[10px] font-bold tracking-[0.22em] uppercase">
-              Our mission
+      <section className="bg-brand-navy text-content-inverse">
+        <div className="grid lg:grid-cols-2">
+          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-[480px] lg:border-r lg:border-b-0 lg:p-16 xl:p-24">
+            <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
+              {missionVisionSection.mission.label}
             </p>
 
-            <p className="font-display mt-8 text-[39px] leading-[1.08] font-semibold tracking-[-0.055em] sm:text-[54px] lg:text-[64px]">
-              Transform technology into operational excellence, competitive
-              dominance, and long-term business growth.
+            <h2 className="mt-8 max-w-xl text-3xl leading-snug font-light sm:text-4xl lg:text-5xl">
+              {missionVisionSection.mission.title}
+            </h2>
+
+            <p className="text-content-inverse/65 mt-8 max-w-xl text-base leading-8">
+              {missionVisionSection.mission.description}
+            </p>
+          </article>
+
+          <article className="p-8 sm:p-12 lg:min-h-[480px] lg:p-16 xl:p-24">
+            <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
+              {missionVisionSection.vision.label}
             </p>
 
-            <div className="mt-16 max-w-175 border-t border-white/25 pt-10">
-              <p className="text-brand-gold text-[10px] font-bold tracking-[0.22em] uppercase">
-                Our vision
-              </p>
+            <h2 className="mt-8 max-w-xl text-3xl leading-snug font-light sm:text-4xl lg:text-5xl">
+              {missionVisionSection.vision.title}
+            </h2>
 
-              <p className="font-display mt-6 text-[27px] leading-[1.2] font-semibold tracking-[-0.04em] sm:text-[36px]">
-                To become the market&apos;s most trusted and results-driven
-                technology consulting force.
-              </p>
-            </div>
-          </div>
+            <p className="text-content-inverse/65 mt-8 max-w-xl text-base leading-8">
+              {missionVisionSection.vision.description}
+            </p>
+          </article>
         </div>
       </section>
 
-      {/* Interactive execution narrative */}
+      {/* Differentiators */}
       <section
-        id="execution"
-        className="bg-brand-paper scroll-mt-20 py-24 lg:py-40"
+        id="differentiators"
+        className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-            <div>
-              <EditorialLabel>Execution model</EditorialLabel>
+        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
+          <div>
+            <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
+              {differentiatorsSection.label}
+            </p>
 
-              <h2 className="font-display text-brand-navy mt-8 max-w-225 text-[43px] leading-[1.04] font-semibold tracking-[-0.06em] sm:text-[60px] lg:text-[74px]">
-                From ambiguity to accountable execution.
-              </h2>
-            </div>
+            <h2 className="text-brand-navy mt-5 text-4xl leading-tight font-light tracking-[-0.04em] sm:text-5xl">
+              {differentiatorsSection.title}
+            </h2>
 
-            <p className="text-brand-slate max-w-115 text-lg leading-8">
-              Four connected phases. Senior ownership and visible progress
-              throughout.
+            <p className="text-content-muted mt-6 max-w-md text-base leading-7">
+              {differentiatorsSection.description}
             </p>
           </div>
 
-          <div className="mt-20 grid gap-14 lg:grid-cols-[0.62fr_1.38fr] lg:gap-20">
-            <div className="border-brand-line border-t">
-              {executionSteps.map((step, index) => {
-                const isActive = activeExecution === index;
-
-                return (
-                  <button
-                    key={step.title}
-                    type="button"
-                    onMouseEnter={() => setActiveExecution(index)}
-                    onFocus={() => setActiveExecution(index)}
-                    onClick={() => setActiveExecution(index)}
-                    className="group border-brand-line flex w-full items-center gap-6 border-b py-7 text-left"
-                  >
-                    <span
-                      className={`text-[10px] font-bold ${
-                        isActive ? "text-brand-cobalt" : "text-brand-slate/40"
-                      }`}
-                    >
-                      {step.number}
-                    </span>
-
-                    <span
-                      className={`font-display flex-1 text-[27px] font-semibold tracking-[-0.04em] transition-all ${
-                        isActive
-                          ? "text-brand-cobalt translate-x-2"
-                          : "text-brand-navy group-hover:text-brand-cobalt"
-                      }`}
-                    >
-                      {step.title}
-                    </span>
-
-                    <ArrowRight
-                      size={18}
-                      className={`transition-all ${
-                        isActive
-                          ? "text-brand-cobalt translate-x-0"
-                          : "text-brand-line -translate-x-2 group-hover:translate-x-0"
-                      }`}
-                    />
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="bg-brand-deep relative min-h-170 overflow-hidden">
-              <img
-                key={selectedExecution.image}
-                src={selectedExecution.image}
-                alt={selectedExecution.title}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,19,29,0.08)_20%,rgba(4,19,29,0.94)_100%)]" />
-
-              <div className="absolute inset-x-0 bottom-0 p-7 text-white sm:p-10 lg:p-12">
-                <span className="font-display text-[90px] leading-none font-semibold tracking-[-0.08em] text-white/10">
-                  {selectedExecution.number}
+          <div className="border-line-default border-t">
+            {differentiatorsSection.items.map((item) => (
+              <article
+                key={item.number}
+                className="group border-line-default grid gap-4 border-b py-7 sm:grid-cols-[52px_0.75fr_1.25fr_24px] sm:items-start"
+              >
+                <span className="text-brand-blue text-xs font-bold">
+                  {item.number}
                 </span>
 
-                <p className="font-display mt-4 max-w-190 text-[32px] leading-[1.14] font-semibold tracking-[-0.045em] sm:text-[43px]">
-                  {selectedExecution.statement}
+                <h3 className="text-brand-navy text-lg font-semibold">
+                  {item.title}
+                </h3>
+
+                <p className="text-content-muted text-sm leading-7">
+                  {item.description}
                 </p>
 
-                <p className="mt-6 max-w-185 text-lg leading-8 text-white/63">
-                  {selectedExecution.description}
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4 border-t border-white/25 pt-7">
-                  {selectedExecution.details.map((detail) => (
-                    <span
-                      key={detail}
-                      className="flex items-center gap-3 text-sm font-semibold text-white/72"
-                    >
-                      <Check size={15} className="text-brand-gold" />
-                      {detail}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                  className="text-brand-blue hidden h-5 w-5 transition-transform group-hover:translate-x-1 sm:block"
+                >
+                  <path
+                    d="M5 12h13M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Cinematic industries */}
+      {/* Approach */}
+      <section
+        id="approach"
+        className="bg-surface-muted scroll-mt-24 py-20 lg:py-28"
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
+              {approachSection.label}
+            </p>
+
+            <h2 className="text-brand-navy mt-5 text-4xl leading-tight font-light tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+              {approachSection.title}
+            </h2>
+
+            <p className="text-content-muted mt-7 max-w-2xl text-lg leading-8">
+              {approachSection.description}
+            </p>
+          </div>
+
+          <div className="border-line-default mt-14 grid border-t border-l md:grid-cols-2 xl:grid-cols-4">
+            {approachSection.steps.map((step) => (
+              <article
+                key={step.number}
+                className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-[330px] border-r border-b p-7 transition-colors sm:p-9"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="text-brand-blue group-hover:text-brand-sky text-sm font-bold">
+                    {step.number}
+                  </span>
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    className="text-brand-blue group-hover:text-content-inverse h-5 w-5 -rotate-45 transition-transform group-hover:rotate-0"
+                  >
+                    <path
+                      d="M5 12h13M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <h3 className="text-brand-navy group-hover:text-content-inverse mt-24 text-3xl font-medium tracking-[-0.035em]">
+                  {step.title}
+                </h3>
+
+                <p className="text-content-muted group-hover:text-content-inverse/70 mt-5 text-sm leading-7">
+                  {step.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries */}
       <section
         id="industries"
-        className="bg-brand-deep relative min-h-237.5 scroll-mt-20 overflow-hidden text-white"
+        className="bg-surface-page scroll-mt-24 overflow-hidden py-20 lg:py-28"
       >
-        <img
-          key={selectedIndustry.image}
-          src={selectedIndustry.image}
-          alt={selectedIndustry.title}
-          className="absolute inset-0 h-full w-full object-cover transition duration-700"
-        />
+        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
+          <div className="relative min-h-[520px] overflow-hidden">
+            <img
+              src={industriesSection.featureImage}
+              alt={industriesSection.featureImageAlt}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
 
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,19,29,0.55)_0%,rgba(4,19,29,0.12)_42%,rgba(4,19,29,0.94)_100%)]" />
+            <div className="from-brand-navy/80 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
 
-        <div className="relative mx-auto flex min-h-237.5 max-w-[1540px] flex-col px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-start">
-            <div>
-              <EditorialLabel light>Industries</EditorialLabel>
+            <div className="text-content-inverse absolute inset-x-0 bottom-0 p-7 sm:p-10">
+              <p className="text-brand-sky text-xs font-bold tracking-[0.2em] uppercase">
+                {industriesSection.featureLabel}
+              </p>
 
-              <h2 className="font-display mt-8 max-w-190 text-[44px] leading-[1.04] font-semibold tracking-[-0.06em] sm:text-[61px] lg:text-[74px]">
-                Domain fluency where technology cannot fail.
-              </h2>
-            </div>
-
-            <span className="font-display text-[110px] leading-none font-semibold tracking-[-0.08em] text-white/8">
-              0{activeIndustry + 1}
-            </span>
-          </div>
-
-          <div className="mt-auto">
-            <div className="max-w-195">
-              <SelectedIndustryIcon
-                size={30}
-                strokeWidth={1.35}
-                className="text-brand-gold"
-              />
-
-              <h3 className="font-display mt-7 text-[39px] leading-[1.06] font-semibold tracking-tighter sm:text-[54px]">
-                {selectedIndustry.title}
-              </h3>
-
-              <p className="mt-6 max-w-170 text-lg leading-8 text-white/65">
-                {selectedIndustry.description}
+              <p className="mt-4 max-w-lg text-2xl leading-snug font-light sm:text-3xl">
+                {industriesSection.featureText}
               </p>
             </div>
+          </div>
 
-            <div className="mt-14 flex gap-8 overflow-x-auto border-t border-white/30 pt-6">
-              {industries.map((industry, index) => {
-                const isActive = activeIndustry === index;
+          <div>
+            <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
+              {industriesSection.label}
+            </p>
 
-                return (
-                  <button
-                    key={industry.title}
-                    type="button"
-                    onMouseEnter={() => setActiveIndustry(index)}
-                    onFocus={() => setActiveIndustry(index)}
-                    onClick={() => setActiveIndustry(index)}
-                    className={`relative shrink-0 pb-4 text-left transition-colors ${
-                      isActive ? "text-white" : "text-white/40 hover:text-white"
-                    }`}
+            <h2 className="text-brand-navy mt-5 text-4xl leading-tight font-light tracking-[-0.04em] sm:text-5xl">
+              {industriesSection.title}
+            </h2>
+
+            <div className="border-line-default mt-10 border-t">
+              {industriesSection.industries.map((industry, index) => (
+                <div
+                  key={industry}
+                  className="group border-line-default flex items-center justify-between gap-5 border-b py-5"
+                >
+                  <div className="flex items-center gap-5">
+                    <span className="text-brand-blue w-7 text-xs font-bold">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="text-brand-navy text-lg font-medium sm:text-xl">
+                      {industry}
+                    </span>
+                  </div>
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    className="text-brand-blue h-5 w-5 transition-transform group-hover:translate-x-1"
                   >
-                    <span className="text-[9px] font-bold tracking-[0.17em]">
-                      0{index + 1}
-                    </span>
-
-                    <span className="font-display mt-2 block text-xl font-semibold">
-                      {industry.shortTitle}
-                    </span>
-
-                    <span
-                      className={`bg-brand-gold absolute bottom-0 left-0 h-0.75 transition-all ${
-                        isActive ? "w-full" : "w-0"
-                      }`}
+                    <path
+                      d="M5 12h13M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
-                  </button>
-                );
-              })}
+                  </svg>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Closing manifesto */}
-      <section className="bg-brand-cream relative overflow-hidden">
-        <div className="bg-brand-line absolute inset-y-0 left-[28%] hidden w-px lg:block" />
+      {/* Commitment */}
+      <section className="bg-brand-navy text-content-inverse relative min-h-[650px] overflow-hidden">
+        <img
+          src={commitmentSection.image}
+          alt={commitmentSection.imageAlt}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
 
-        <div className="mx-auto max-w-[1540px] px-5 py-28 sm:px-8 lg:px-12 lg:py-44">
-          <div className="grid gap-16 lg:grid-cols-[0.45fr_1.55fr] lg:gap-24">
-            <div>
-              <p className="text-brand-cobalt text-[10px] leading-8 font-bold tracking-[0.2em] uppercase">
-                No generic playbooks.
-                <br />
-                No diluted ownership.
-                <br />
-                No technology for its own sake.
-              </p>
-            </div>
+        <div className="bg-brand-navy/50 absolute inset-0" />
 
-            <div>
-              <p className="font-display text-brand-navy max-w-270 text-[41px] leading-[1.09] font-semibold tracking-[-0.055em] sm:text-[57px] lg:text-[70px]">
-                Senior expertise, disciplined execution, and an unwavering
-                commitment to the outcome your mission demands.
-              </p>
+        <div className="from-brand-navy/95 via-brand-navy/75 absolute inset-0 bg-gradient-to-r to-transparent" />
 
-              <div className="border-brand-line mt-14 grid gap-9 border-t pt-9 md:grid-cols-[1fr_auto] md:items-center">
-                <p className="text-brand-slate max-w-162.5 text-lg leading-8">
-                  From strategy and architecture through implementation and
-                  support, Jethavictus owns the path from complexity to
-                  progress.
-                </p>
+        <div className="relative mx-auto flex min-h-[650px] w-full max-w-[1440px] items-center px-5 py-20 sm:px-8 lg:px-12">
+          <div className="max-w-3xl">
+            <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
+              {commitmentSection.label}
+            </p>
 
-                <a
-                  href="#contact"
-                  className="group text-brand-navy inline-flex items-center gap-5 text-sm font-bold"
-                >
-                  Begin the mission
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </a>
-              </div>
-            </div>
+            <h2 className="mt-6 text-4xl leading-tight font-light tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+              {commitmentSection.title}
+
+              <span className="block font-semibold">
+                {commitmentSection.highlightedTitle}
+              </span>
+            </h2>
+
+            <p className="text-content-inverse/75 mt-7 max-w-2xl text-lg leading-8">
+              {commitmentSection.description}
+            </p>
+
+            <a
+              href={commitmentSection.cta.href}
+              className="group bg-surface-page text-brand-navy mt-9 inline-flex items-center justify-between gap-12 px-6 py-4 text-sm font-bold"
+            >
+              {commitmentSection.cta.label}
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="h-5 w-5 transition-transform group-hover:translate-x-1"
+              >
+                <path
+                  d="M5 12h13M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -1148,112 +894,135 @@ export default function HomePage() {
       {/* Contact */}
       <section
         id="contact"
-        className="bg-brand-gold text-brand-navy scroll-mt-20"
+        className="bg-brand-blue text-content-inverse scroll-mt-24"
       >
-        <div className="mx-auto max-w-[1540px] px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
-          <div className="grid gap-14 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+        <div className="mx-auto w-full max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <span className="text-brand-navy/52 text-[10px] font-bold tracking-[0.23em] uppercase">
-                Ready to win?
-              </span>
-
-              <h2 className="font-display mt-7 max-w-257.5 text-[53px] leading-[0.94] font-semibold tracking-[-0.07em] sm:text-[77px] lg:text-[98px]">
-                Build what your future demands.
-              </h2>
-            </div>
-
-            <div className="lg:pb-2">
-              <p className="text-brand-navy/66 max-w-110 text-lg leading-8">
-                Bring us the enterprise challenge that matters most. We will
-                bring the strategy, engineering, and accountability required to
-                move it forward.
+              <p className="text-brand-ice text-xs font-bold tracking-[0.22em] uppercase">
+                {contactSection.label}
               </p>
 
-              <a
-                href="mailto:hello@jethavictus.com"
-                className="group border-brand-navy/25 mt-9 flex min-h-17 items-center justify-between border-t py-5 font-bold"
-              >
-                hello@jethavictus.com
-                <MoveUpRight
-                  size={20}
-                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </a>
+              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+                {contactSection.title}
+
+                <span className="block font-semibold">
+                  {contactSection.highlightedTitle}
+                </span>
+              </h2>
+
+              <p className="text-content-inverse/75 mt-7 max-w-xl text-lg leading-8">
+                {contactSection.description}
+              </p>
             </div>
+
+            <a
+              href={`mailto:${brand.email}`}
+              className="group border-line-inverse bg-surface-page text-brand-blue flex h-28 w-28 items-center justify-center rounded-full border transition-transform hover:scale-105 sm:h-36 sm:w-36"
+              aria-label={`Email ${brand.name} ${brand.suffix}`}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="h-9 w-9 -rotate-45 transition-transform group-hover:rotate-0"
+              >
+                <path
+                  d="M5 12h13M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div className="border-line-inverse/30 mt-16 flex flex-col gap-5 border-t pt-8 text-lg font-semibold sm:flex-row sm:items-center sm:justify-between">
+            <a
+              href={`mailto:${brand.email}`}
+              className="transition-opacity hover:opacity-70"
+            >
+              {brand.email}
+            </a>
+
+            <a
+              href={brand.website}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-opacity hover:opacity-70"
+            >
+              {brand.websiteLabel}
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-deep text-white">
-        <div className="mx-auto max-w-[1540px] px-5 pt-16 pb-7 sm:px-8 lg:px-12">
-          <div className="grid gap-14 border-b border-white/15 pb-16 lg:grid-cols-[1.35fr_0.65fr_0.65fr]">
+      <footer className="bg-brand-navy text-content-inverse">
+        <div className="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+          <div className="border-line-inverse/20 grid gap-12 border-b pb-14 lg:grid-cols-[1.15fr_2fr]">
             <div>
-              <Logo light />
+              <a
+                href="#top"
+                aria-label={`${brand.name} ${brand.suffix} home`}
+                className="flex items-center gap-3"
+              >
+                <span className="border-line-inverse relative flex h-10 w-10 items-center justify-center border-2">
+                  <span className="text-content-inverse text-sm font-black tracking-[-0.08em]">
+                    JV
+                  </span>
 
-              <p className="mt-7 max-w-120 leading-7 text-white/45">
-                High-performance technology consulting engineered to transform
-                complex enterprise challenges into measurable advantage.
-              </p>
+                  <span className="border-brand-navy bg-surface-page absolute -right-1 -bottom-1 h-3 w-3 border-2" />
+                </span>
 
-              <p className="text-brand-cyan mt-8 text-[9px] font-bold tracking-[0.22em] uppercase">
-                Engineered for victory
+                <span className="leading-none">
+                  <span className="text-content-inverse block text-[15px] font-extrabold tracking-[0.08em]">
+                    {brand.name}
+                  </span>
+
+                  <span className="text-content-inverse/65 mt-1 block text-[9px] font-bold tracking-[0.38em]">
+                    {brand.suffix}
+                  </span>
+                </span>
+              </a>
+
+              <p className="text-content-inverse/60 mt-7 max-w-sm text-sm leading-7">
+                {brand.shortDescription}
               </p>
             </div>
 
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase">
-                Navigate
-              </p>
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {footer.groups.map((group) => (
+                <div key={group.title}>
+                  <h3 className="text-content-inverse text-xs font-bold tracking-[0.18em] uppercase">
+                    {group.title}
+                  </h3>
 
-              <nav className="mt-6 flex flex-col items-start gap-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="hover:text-brand-cyan text-sm text-white/60 transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase">
-                Contact
-              </p>
-
-              <div className="mt-6 space-y-4">
-                <a
-                  href="mailto:hello@jethavictus.com"
-                  className="hover:text-brand-cyan block text-sm text-white/60 transition-colors"
-                >
-                  hello@jethavictus.com
-                </a>
-
-                <a
-                  href="https://www.jethavictus.com"
-                  className="hover:text-brand-cyan block text-sm text-white/60 transition-colors"
-                >
-                  www.jethavictus.com
-                </a>
-              </div>
+                  <ul className="mt-5 space-y-3">
+                    {group.links.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          className="text-content-inverse/60 hover:text-content-inverse text-sm transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 py-7 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Jethavictus Solutions.</p>
+          <div className="text-content-inverse/45 flex flex-col gap-4 pt-8 text-xs sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              © {new Date().getFullYear()} {brand.name} {brand.suffix}. All
+              rights reserved.
+            </p>
 
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-brand-cyan transition-colors">
-                Privacy
-              </a>
-
-              <a href="#" className="hover:text-brand-cyan transition-colors">
-                Terms
-              </a>
-            </div>
+            <p>{brand.tagline}</p>
           </div>
         </div>
       </footer>
