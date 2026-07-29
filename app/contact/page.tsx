@@ -46,7 +46,7 @@ export default function ContactPage() {
   return (
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
-      <section className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]">
+      <section className="bg-brand-navy relative min-h-155 overflow-hidden sm:min-h-170 lg:min-h-185">
         <Image
           src={hero.image}
           alt={hero.imageAlt}
@@ -58,17 +58,17 @@ export default function ContactPage() {
 
         <div className="bg-brand-navy/30 absolute inset-0" />
 
-        <div className="from-brand-navy-deep/95 via-brand-navy/78 to-brand-navy/10 absolute inset-0 bg-gradient-to-r" />
+        <div className="from-brand-navy-deep/95 via-brand-navy/78 to-brand-navy/10 absolute inset-0 bg-linear-to-r" />
 
-        <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent" />
+        <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-48 bg-linear-to-t to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1440px] items-center px-5 py-20 sm:min-h-[680px] sm:px-8 lg:min-h-[740px] lg:px-12">
+        <div className="relative mx-auto flex min-h-155 w-full max-w-360 items-center px-5 py-20 sm:min-h-170 sm:px-8 lg:min-h-185 lg:px-12">
           <div className="text-content-inverse max-w-5xl">
             <p className="text-content-inverse/80 mb-6 text-xs font-bold tracking-[0.24em] uppercase">
               {hero.label}
             </p>
 
-            <h1 className="max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-[86px]">
+            <h1 className="max-w-5xl text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-[86px]">
               {hero.title}
 
               <span className="block font-semibold">
@@ -114,7 +114,7 @@ export default function ContactPage() {
         id="contact-details"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
             <div>
               <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
@@ -144,7 +144,7 @@ export default function ContactPage() {
               return (
                 <article
                   key={method.label}
-                  className="group border-line-default bg-surface-page hover:bg-brand-navy flex min-h-[360px] flex-col border-r border-b p-7 transition-colors sm:p-9"
+                  className="group border-line-default bg-surface-page hover:bg-brand-navy flex min-h-90 flex-col border-r border-b p-7 transition-colors sm:p-9"
                 >
                   <div className="bg-brand-ice text-brand-blue group-hover:bg-content-inverse/10 group-hover:text-brand-sky flex h-12 w-12 items-center justify-center">
                     <Icon className="h-6 w-6" />
@@ -158,7 +158,7 @@ export default function ContactPage() {
                     href={method.href}
                     target={method.external ? "_blank" : undefined}
                     rel={method.external ? "noreferrer" : undefined}
-                    className="text-brand-navy group-hover:text-content-inverse mt-4 text-xl leading-snug font-medium break-words"
+                    className="text-brand-navy group-hover:text-content-inverse mt-4 text-xl leading-snug font-medium wrap-break-word"
                   >
                     {method.value}
                   </a>
@@ -186,7 +186,7 @@ export default function ContactPage() {
         id="offices"
         className="bg-surface-muted scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="border-line-default grid gap-10 border-b pb-10 lg:grid-cols-[1fr_0.72fr] lg:items-end">
             <div>
               <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
@@ -209,7 +209,7 @@ export default function ContactPage() {
                 key={office.name}
                 className="group border-line-default bg-surface-page border"
               >
-                <div className="bg-surface-muted relative aspect-[16/9] overflow-hidden">
+                <div className="bg-surface-muted relative aspect-video overflow-hidden">
                   <Image
                     src={office.image}
                     alt={office.imageAlt}
@@ -218,7 +218,7 @@ export default function ContactPage() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
 
-                  <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t to-transparent" />
+                  <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-32 bg-linear-to-t to-transparent" />
 
                   {office.isPrimary && (
                     <span className="bg-brand-blue text-content-inverse absolute top-0 left-0 px-4 py-3 text-xs font-bold tracking-[0.14em] uppercase">
@@ -330,7 +330,7 @@ export default function ContactPage() {
 
       {/* Availability */}
       <section className="bg-brand-navy text-content-inverse py-20 lg:py-28">
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
             <div>
               <p className="text-brand-sky text-xs font-bold tracking-[0.2em] uppercase">
@@ -355,7 +355,7 @@ export default function ContactPage() {
               return (
                 <article
                   key={detail.label}
-                  className="group border-line-inverse/20 hover:bg-surface-page min-h-[300px] border-r border-b p-7 transition-colors sm:p-9"
+                  className="group border-line-inverse/20 hover:bg-surface-page min-h-75 border-r border-b p-7 transition-colors sm:p-9"
                 >
                   <div className="border-line-inverse/30 text-brand-sky group-hover:border-brand-blue group-hover:bg-brand-ice group-hover:text-brand-blue flex h-12 w-12 items-center justify-center border">
                     <Icon className="h-6 w-6" />
@@ -376,7 +376,7 @@ export default function ContactPage() {
       </section>
 
       {/* Visit section */}
-      <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
+      <section className="bg-brand-navy text-content-inverse relative min-h-170 overflow-hidden">
         <Image
           src={visitSection.image}
           alt={visitSection.imageAlt}
@@ -387,15 +387,15 @@ export default function ContactPage() {
 
         <div className="bg-brand-navy/45 absolute inset-0" />
 
-        <div className="from-brand-navy-deep/95 via-brand-navy/80 absolute inset-0 bg-gradient-to-r to-transparent" />
+        <div className="from-brand-navy-deep/95 via-brand-navy/80 absolute inset-0 bg-linear-to-r to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[680px] w-full max-w-[1440px] items-center px-5 py-20 sm:px-8 lg:px-12">
+        <div className="relative mx-auto flex min-h-170 w-full max-w-360 items-center px-5 py-20 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {visitSection.label}
             </p>
 
-            <h2 className="mt-6 text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+            <h2 className="mt-6 text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-7xl">
               {visitSection.title}
 
               <span className="block font-semibold">
@@ -420,14 +420,14 @@ export default function ContactPage() {
 
       {/* Final contact */}
       <section className="bg-brand-blue text-content-inverse">
-        <div className="mx-auto w-full max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div className="mx-auto w-full max-w-360 px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p className="text-brand-ice text-xs font-bold tracking-[0.22em] uppercase">
                 {finalContact.label}
               </p>
 
-              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-7xl">
                 {finalContact.title}
 
                 <span className="block font-semibold">
