@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
-      <section className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]">
+      <section className="bg-brand-navy relative min-h-155 overflow-hidden sm:min-h-170 lg:min-h-185">
         <Image
           src={hero.image}
           alt={hero.imageAlt}
@@ -35,11 +35,11 @@ export default function AboutPage() {
 
         <div className="bg-brand-navy/25 absolute inset-0" />
 
-        <div className="from-brand-navy-deep/95 via-brand-navy/75 to-brand-navy/10 absolute inset-0 bg-gradient-to-r" />
+        <div className="from-brand-navy-deep/95 via-brand-navy/75 to-brand-navy/10 absolute inset-0 bg-linear-to-r" />
 
-        <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t to-transparent" />
+        <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-44 bg-linear-to-t to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1440px] items-center px-5 py-20 sm:min-h-[680px] sm:px-8 lg:min-h-[740px] lg:px-12">
+        <div className="relative mx-auto flex min-h-155 w-full max-w-360 items-center px-5 py-20 sm:min-h-170 sm:px-8 lg:min-h-185 lg:px-12">
           <div className="text-content-inverse max-w-5xl">
             <p className="text-content-inverse/80 mb-6 text-xs font-bold tracking-[0.24em] uppercase">
               {hero.label}
@@ -132,7 +132,7 @@ export default function AboutPage() {
         id="introduction"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-32"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24 lg:px-12">
+        <div className="mx-auto grid w-full max-w-360 gap-14 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24 lg:px-12">
           <div>
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {introduction.label}
@@ -161,9 +161,9 @@ export default function AboutPage() {
 
       {/* Identity */}
       <section className="bg-surface-muted py-20 lg:py-28">
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="bg-brand-navy grid overflow-hidden lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="relative min-h-[520px] lg:min-h-[720px]">
+            <div className="relative min-h-130 lg:min-h-180">
               <Image
                 src={identity.image}
                 alt={identity.imageAlt}
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
-              <div className="from-brand-navy/40 absolute inset-0 bg-gradient-to-t to-transparent" />
+              <div className="from-brand-navy/40 absolute inset-0 bg-linear-to-t to-transparent" />
             </div>
 
             <div className="text-content-inverse p-8 sm:p-12 lg:p-16 xl:p-20">
@@ -219,7 +219,7 @@ export default function AboutPage() {
         className="bg-brand-navy text-content-inverse scroll-mt-24"
       >
         <div className="grid lg:grid-cols-2">
-          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-[520px] lg:border-r lg:border-b-0 lg:p-16 xl:p-24">
+          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-130 lg:border-r lg:border-b-0 lg:p-16 xl:p-24">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {missionVision.mission.label}
             </p>
@@ -233,7 +233,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="p-8 sm:p-12 lg:min-h-[520px] lg:p-16 xl:p-24">
+          <article className="p-8 sm:p-12 lg:min-h-130 lg:p-16 xl:p-24">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {missionVision.vision.label}
             </p>
@@ -254,7 +254,7 @@ export default function AboutPage() {
         id="principles"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
+        <div className="mx-auto grid w-full max-w-360 gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
           <div>
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {principles.label}
@@ -312,7 +312,7 @@ export default function AboutPage() {
         id="operating-model"
         className="bg-surface-muted scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {operatingModel.label}
@@ -331,7 +331,7 @@ export default function AboutPage() {
             {operatingModel.steps.map((step) => (
               <article
                 key={step.number}
-                className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-[360px] border-r border-b p-7 transition-colors sm:p-9"
+                className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-90 border-r border-b p-7 transition-colors sm:p-9"
               >
                 <div className="flex items-start justify-between">
                   <span className="text-brand-blue group-hover:text-brand-sky text-sm font-bold">
@@ -369,8 +369,8 @@ export default function AboutPage() {
 
       {/* Leadership Standard */}
       <section className="bg-surface-page py-20 lg:py-28">
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
-          <div className="relative min-h-[560px] overflow-hidden">
+        <div className="mx-auto grid w-full max-w-360 gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
+          <div className="relative min-h-140 overflow-hidden">
             <Image
               src={leadershipStandard.image}
               alt={leadershipStandard.imageAlt}
@@ -379,7 +379,7 @@ export default function AboutPage() {
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            <div className="from-brand-navy/75 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+            <div className="from-brand-navy/75 absolute inset-0 bg-linear-to-t via-transparent to-transparent" />
 
             <div className="text-content-inverse absolute inset-x-0 bottom-0 p-7 sm:p-10">
               <p className="text-brand-sky text-xs font-bold tracking-[0.2em] uppercase">
@@ -432,7 +432,7 @@ export default function AboutPage() {
         id="industries"
         className="bg-surface-muted scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-12">
+        <div className="mx-auto grid w-full max-w-360 gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-12">
           <div>
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {industries.label}
@@ -484,7 +484,7 @@ export default function AboutPage() {
       </section>
 
       {/* Closing Statement */}
-      <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
+      <section className="bg-brand-navy text-content-inverse relative min-h-170 overflow-hidden">
         <Image
           src={closingStatement.image}
           alt={closingStatement.imageAlt}
@@ -495,9 +495,9 @@ export default function AboutPage() {
 
         <div className="bg-brand-navy/50 absolute inset-0" />
 
-        <div className="from-brand-navy/95 via-brand-navy/75 absolute inset-0 bg-gradient-to-r to-transparent" />
+        <div className="from-brand-navy/95 via-brand-navy/75 absolute inset-0 bg-linear-to-r to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[680px] w-full max-w-[1440px] items-center px-5 py-20 sm:px-8 lg:px-12">
+        <div className="relative mx-auto flex min-h-170 w-full max-w-360 items-center px-5 py-20 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {closingStatement.label}
@@ -520,14 +520,14 @@ export default function AboutPage() {
 
       {/* Contact */}
       <section className="bg-brand-blue text-content-inverse">
-        <div className="mx-auto w-full max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div className="mx-auto w-full max-w-360 px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p className="text-brand-ice text-xs font-bold tracking-[0.22em] uppercase">
                 {contact.label}
               </p>
 
-              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-7xl">
                 {contact.title}
 
                 <span className="block font-semibold">
