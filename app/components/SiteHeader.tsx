@@ -53,7 +53,7 @@ export function SiteHeader() {
   return (
     <header className="bg-surface-page relative z-50">
       <div className="border-line-subtle bg-surface-soft hidden border-b lg:block">
-        <div className="mx-auto flex h-9 w-full max-w-[1440px] items-center justify-end px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto flex h-9 w-full max-w-360 items-center justify-end px-5 sm:px-8 lg:px-12">
           <nav
             aria-label="Utility navigation"
             className="text-content-muted flex items-center gap-7 text-[11px] font-semibold"
@@ -71,7 +71,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="mx-auto flex h-[74px] w-full max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-18.5 w-full max-w-360 items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link
           href="/"
           aria-label={`${brand.name} ${brand.suffix} home`}
@@ -138,7 +138,7 @@ export function SiteHeader() {
 
       {menuOpen && (
         <div className="border-line-subtle bg-surface-page shadow-navigation absolute inset-x-0 top-full border-t xl:hidden">
-          <nav className="mx-auto flex w-full max-w-[1440px] flex-col px-5 py-4 sm:px-8 lg:px-12">
+          <nav className="mx-auto flex w-full max-w-360 flex-col px-5 py-4 sm:px-8 lg:px-12">
             {navigation.map((item) => (
               <NavLink
                 key={item.label}

@@ -39,7 +39,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-brand-navy text-content-inverse">
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto w-full max-w-360 px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
         <div className="border-line-inverse/20 grid gap-12 border-b pb-14 lg:grid-cols-[1.15fr_2fr]">
           <div>
             <Link
