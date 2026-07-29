@@ -66,7 +66,7 @@ export default function CareersPage() {
   return (
     <main className="bg-surface-page text-content-primary selection:bg-brand-blue selection:text-content-inverse overflow-hidden antialiased">
       {/* Hero */}
-      <section className="bg-brand-navy relative min-h-[640px] overflow-hidden sm:min-h-[700px] lg:min-h-[760px]">
+      <section className="bg-brand-navy relative min-h-160 overflow-hidden sm:min-h-175 lg:min-h-190">
         <Image
           src={hero.image}
           alt={hero.imageAlt}
@@ -77,16 +77,16 @@ export default function CareersPage() {
         />
 
         <div className="bg-brand-navy/30 absolute inset-0" />
-        <div className="from-brand-navy-deep/95 via-brand-navy/78 to-brand-navy/10 absolute inset-0 bg-gradient-to-r" />
-        <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent" />
+        <div className="from-brand-navy-deep/95 via-brand-navy/78 to-brand-navy/10 absolute inset-0 bg-linear-to-r" />
+        <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-48 bg-linear-to-t to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[640px] w-full max-w-[1440px] items-center px-5 py-20 sm:min-h-[700px] sm:px-8 lg:min-h-[760px] lg:px-12">
+        <div className="relative mx-auto flex min-h-160 w-full max-w-360 items-center px-5 py-20 sm:min-h-175 sm:px-8 lg:min-h-190 lg:px-12">
           <div className="text-content-inverse max-w-5xl">
             <p className="text-content-inverse/80 mb-6 text-xs font-bold tracking-[0.24em] uppercase">
               {hero.label}
             </p>
 
-            <h1 className="max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-[86px]">
+            <h1 className="max-w-5xl text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-[86px]">
               {hero.title}
 
               <span className="block font-semibold">
@@ -132,7 +132,7 @@ export default function CareersPage() {
         id="introduction"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:px-12">
+        <div className="mx-auto grid w-full max-w-360 gap-14 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24 lg:px-12">
           <div>
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {introduction.label}
@@ -157,7 +157,7 @@ export default function CareersPage() {
 
       {/* Values */}
       <section className="bg-surface-muted py-20 lg:py-28">
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
+        <div className="mx-auto grid w-full max-w-360 gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
           <div>
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {values.label}
@@ -199,7 +199,7 @@ export default function CareersPage() {
 
       {/* Benefits */}
       <section className="bg-brand-navy text-content-inverse py-20 lg:py-28">
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
             <div>
               <p className="text-brand-sky text-xs font-bold tracking-[0.2em] uppercase">
@@ -223,13 +223,13 @@ export default function CareersPage() {
               return (
                 <article
                   key={benefit.title}
-                  className="group border-line-inverse/20 hover:bg-surface-page min-h-[370px] border-r border-b p-7 transition-colors sm:p-9"
+                  className="group border-line-inverse/20 hover:bg-surface-page min-h-92.5 border-r border-b p-7 transition-colors sm:p-9"
                 >
                   <div className="border-line-inverse/30 text-brand-sky group-hover:border-brand-blue group-hover:bg-brand-ice group-hover:text-brand-blue flex h-12 w-12 items-center justify-center border">
                     <Icon className="h-6 w-6" />
                   </div>
 
-                  <h3 className="group-hover:text-brand-navy mt-24 text-2xl font-medium tracking-[-0.025em]">
+                  <h3 className="group-hover:text-brand-navy mt-24 text-2xl font-medium tracking-tight">
                     {benefit.title}
                   </h3>
 
@@ -248,7 +248,7 @@ export default function CareersPage() {
         id="open-positions"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="border-line-default grid gap-8 border-b pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
               <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
@@ -282,7 +282,7 @@ export default function CareersPage() {
 
                     <div>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                        <h3 className="text-brand-navy text-2xl font-medium tracking-[-0.025em] sm:text-3xl">
+                        <h3 className="text-brand-navy text-2xl font-medium tracking-tight sm:text-3xl">
                           {job.title}
                         </h3>
 
@@ -417,7 +417,7 @@ export default function CareersPage() {
         id="hiring-process"
         className="bg-surface-muted scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {hiringProcess.label}
@@ -446,7 +446,7 @@ export default function CareersPage() {
               return (
                 <article
                   key={step.number}
-                  className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-[360px] border-r border-b p-7 transition-colors sm:p-9"
+                  className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-90 border-r border-b p-7 transition-colors sm:p-9"
                 >
                   <div className="flex items-start justify-between">
                     <span className="bg-brand-ice text-brand-blue group-hover:bg-content-inverse/10 group-hover:text-brand-sky flex h-12 w-12 items-center justify-center">
@@ -473,7 +473,7 @@ export default function CareersPage() {
       </section>
 
       {/* Closing statement */}
-      <section className="bg-brand-navy text-content-inverse relative min-h-[680px] overflow-hidden">
+      <section className="bg-brand-navy text-content-inverse relative min-h-170 overflow-hidden">
         <Image
           src={closingStatement.image}
           alt={closingStatement.imageAlt}
@@ -483,15 +483,15 @@ export default function CareersPage() {
         />
 
         <div className="bg-brand-navy/45 absolute inset-0" />
-        <div className="from-brand-navy-deep/95 via-brand-navy/80 absolute inset-0 bg-gradient-to-r to-transparent" />
+        <div className="from-brand-navy-deep/95 via-brand-navy/80 absolute inset-0 bg-linear-to-r to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[680px] w-full max-w-[1440px] items-center px-5 py-20 sm:px-8 lg:px-12">
+        <div className="relative mx-auto flex min-h-170 w-full max-w-360 items-center px-5 py-20 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {closingStatement.label}
             </p>
 
-            <h2 className="mt-6 text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+            <h2 className="mt-6 text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-7xl">
               {closingStatement.title}
 
               <span className="block font-semibold">
@@ -508,14 +508,14 @@ export default function CareersPage() {
 
       {/* General application */}
       <section className="bg-brand-blue text-content-inverse">
-        <div className="mx-auto w-full max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div className="mx-auto w-full max-w-360 px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p className="text-brand-ice text-xs font-bold tracking-[0.22em] uppercase">
                 {contact.label}
               </p>
 
-              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-7xl">
                 {contact.title}
 
                 <span className="block font-semibold">
