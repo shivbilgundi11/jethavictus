@@ -25,7 +25,7 @@ export default function HomePage() {
       {/* Hero */}
       <section
         id="top"
-        className="bg-brand-navy relative min-h-[620px] overflow-hidden sm:min-h-[680px] lg:min-h-[740px]"
+        className="bg-brand-navy relative min-h-155 overflow-hidden sm:min-h-170 lg:min-h-185"
       >
         <Image
           src={hero.image}
@@ -38,11 +38,11 @@ export default function HomePage() {
 
         <div className="bg-brand-navy/15 absolute inset-0" />
 
-        <div className="from-brand-navy-deep/95 via-brand-navy/70 absolute inset-0 bg-gradient-to-r to-transparent" />
+        <div className="from-brand-navy-deep/95 via-brand-navy/70 absolute inset-0 bg-linear-to-r to-transparent" />
 
-        <div className="from-brand-navy/55 absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t to-transparent" />
+        <div className="from-brand-navy/55 absolute inset-x-0 bottom-0 h-40 bg-linear-to-t to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[620px] w-full max-w-[1440px] items-center px-5 py-20 sm:min-h-[680px] sm:px-8 lg:min-h-[740px] lg:px-12">
+        <div className="relative mx-auto flex min-h-155 w-full max-w-360 items-center px-5 py-20 sm:min-h-170 sm:px-8 lg:min-h-185 lg:px-12">
           <div className="text-content-inverse max-w-4xl">
             <p className="text-content-inverse/80 mb-6 text-xs font-bold tracking-[0.24em] uppercase">
               {hero.label}
@@ -135,7 +135,7 @@ export default function HomePage() {
         id="priorities"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="border-line-default flex flex-col justify-between gap-6 border-b pb-8 md:flex-row md:items-end">
             <div>
               <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
@@ -158,7 +158,7 @@ export default function HomePage() {
                 key={item.title}
                 className="group border-line-subtle bg-surface-elevated flex h-full flex-col border"
               >
-                <div className="bg-surface-muted relative aspect-[16/10] overflow-hidden">
+                <div className="bg-surface-muted relative aspect-16/10 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -173,7 +173,7 @@ export default function HomePage() {
                     {item.category}
                   </p>
 
-                  <h3 className="text-brand-navy mt-4 text-2xl leading-tight font-medium tracking-[-0.025em]">
+                  <h3 className="text-brand-navy mt-4 text-2xl leading-tight font-medium tracking-tight">
                     {item.title}
                   </h3>
 
@@ -214,7 +214,7 @@ export default function HomePage() {
         id="about"
         className="bg-surface-muted scroll-mt-24 py-20 lg:py-32"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
             <div>
               <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
@@ -242,7 +242,7 @@ export default function HomePage() {
           </div>
 
           <div className="bg-brand-navy mt-20 grid overflow-hidden lg:grid-cols-2">
-            <div className="relative min-h-[420px]">
+            <div className="relative min-h-105">
               <Image
                 src={aboutSection.feature.image}
                 alt={aboutSection.feature.imageAlt}
@@ -298,7 +298,7 @@ export default function HomePage() {
         id="capabilities"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="border-line-default grid gap-8 border-b pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
               <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
@@ -323,9 +323,7 @@ export default function HomePage() {
               >
                 <div
                   className={`bg-surface-muted relative overflow-hidden ${
-                    index === 0
-                      ? "aspect-[16/9] lg:aspect-[16/7]"
-                      : "aspect-[16/10]"
+                    index === 0 ? "aspect-video lg:aspect-16/7" : "aspect-16/10"
                   }`}
                 >
                   <Image
@@ -342,7 +340,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="border-line-default border-b py-6">
-                  <h3 className="text-brand-navy text-2xl font-medium tracking-[-0.025em]">
+                  <h3 className="text-brand-navy text-2xl font-medium tracking-tight">
                     {service.title}
                   </h3>
 
@@ -356,7 +354,7 @@ export default function HomePage() {
                         key={bullet}
                         className="text-content-secondary flex gap-3 text-sm leading-6"
                       >
-                        <span className="bg-brand-blue mt-[9px] h-1.5 w-1.5 shrink-0" />
+                        <span className="bg-brand-blue mt-2.25 h-1.5 w-1.5 shrink-0" />
 
                         <span>{bullet}</span>
                       </li>
@@ -393,8 +391,8 @@ export default function HomePage() {
 
       {/* Mission and vision */}
       <section className="bg-brand-navy text-content-inverse">
-        <div className="grid lg:grid-cols-2">
-          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-[480px] lg:border-r lg:border-b-0 lg:p-16 xl:p-24">
+        <div className="mx-auto grid max-w-360 lg:grid-cols-2">
+          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-120 lg:border-r lg:border-b-0 lg:p-14 xl:p-20">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {missionVisionSection.mission.label}
             </p>
@@ -408,7 +406,7 @@ export default function HomePage() {
             </p>
           </article>
 
-          <article className="p-8 sm:p-12 lg:min-h-[480px] lg:p-16 xl:p-24">
+          <article className="p-8 sm:p-12 lg:min-h-120 lg:p-14 xl:p-20">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {missionVisionSection.vision.label}
             </p>
@@ -429,7 +427,7 @@ export default function HomePage() {
         id="differentiators"
         className="bg-surface-page scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
+        <div className="mx-auto grid w-full max-w-360 gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12">
           <div>
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {differentiatorsSection.label}
@@ -487,7 +485,7 @@ export default function HomePage() {
         id="approach"
         className="bg-surface-muted scroll-mt-24 py-20 lg:py-28"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-360 px-5 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <p className="text-brand-blue text-xs font-bold tracking-[0.2em] uppercase">
               {approachSection.label}
@@ -506,7 +504,7 @@ export default function HomePage() {
             {approachSection.steps.map((step) => (
               <article
                 key={step.number}
-                className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-[330px] border-r border-b p-7 transition-colors sm:p-9"
+                className="group border-line-default bg-surface-page hover:bg-brand-navy min-h-82.5 border-r border-b p-7 transition-colors sm:p-9"
               >
                 <div className="flex items-start justify-between">
                   <span className="text-brand-blue group-hover:text-brand-sky text-sm font-bold">
@@ -547,8 +545,8 @@ export default function HomePage() {
         id="industries"
         className="bg-surface-page scroll-mt-24 overflow-hidden py-20 lg:py-28"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
-          <div className="relative min-h-[520px] overflow-hidden">
+        <div className="mx-auto grid w-full max-w-360 gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-12">
+          <div className="relative min-h-130 overflow-hidden">
             <Image
               src={industriesSection.featureImage}
               alt={industriesSection.featureImageAlt}
@@ -557,7 +555,7 @@ export default function HomePage() {
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            <div className="from-brand-navy/80 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+            <div className="from-brand-navy/80 absolute inset-0 bg-linear-to-t via-transparent to-transparent" />
 
             <div className="text-content-inverse absolute inset-x-0 bottom-0 p-7 sm:p-10">
               <p className="text-brand-sky text-xs font-bold tracking-[0.2em] uppercase">
@@ -617,7 +615,7 @@ export default function HomePage() {
       </section>
 
       {/* Commitment */}
-      <section className="bg-brand-navy text-content-inverse relative min-h-[650px] overflow-hidden">
+      <section className="bg-brand-navy text-content-inverse relative min-h-162.5 overflow-hidden">
         <Image
           src={commitmentSection.image}
           alt={commitmentSection.imageAlt}
@@ -628,9 +626,9 @@ export default function HomePage() {
 
         <div className="bg-brand-navy/50 absolute inset-0" />
 
-        <div className="from-brand-navy/95 via-brand-navy/75 absolute inset-0 bg-gradient-to-r to-transparent" />
+        <div className="from-brand-navy/95 via-brand-navy/75 absolute inset-0 bg-linear-to-r to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[650px] w-full max-w-[1440px] items-center px-5 py-20 sm:px-8 lg:px-12">
+        <div className="relative mx-auto flex min-h-162.5 w-full max-w-360 items-center px-5 py-20 sm:px-8 lg:px-12">
           <div className="max-w-3xl">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {commitmentSection.label}
@@ -678,14 +676,14 @@ export default function HomePage() {
         id="contact"
         className="bg-brand-blue text-content-inverse scroll-mt-24"
       >
-        <div className="mx-auto w-full max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div className="mx-auto w-full max-w-360 px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p className="text-brand-ice text-xs font-bold tracking-[0.22em] uppercase">
                 {contactSection.label}
               </p>
 
-              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+              <h2 className="mt-5 max-w-5xl text-5xl leading-[0.98] font-light tracking-tighter sm:text-6xl lg:text-7xl">
                 {contactSection.title}
 
                 <span className="block font-semibold">
