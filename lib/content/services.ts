@@ -42,7 +42,7 @@ export const servicesContent = {
     name: "JETHAVICTUS",
     suffix: "SOLUTIONS",
     initials: "JV",
-    email: "hello@jethavictus.com",
+    email: "info@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
     tagline: "Engineered for victory. Built for the future.",
@@ -65,8 +65,8 @@ export const servicesContent = {
         href: "/#contact",
       },
       {
-        label: "hello@jethavictus.com",
-        href: "mailto:hello@jethavictus.com",
+        label: "info@jethavictus.com",
+        href: "mailto:info@jethavictus.com",
       },
     ] satisfies NavigationItem[],
 
@@ -109,7 +109,7 @@ export const servicesContent = {
 
     secondaryCta: {
       label: "Discuss your challenge",
-      href: "/#contact",
+      href: "/contact",
     },
 
     image:
@@ -568,7 +568,7 @@ export const servicesContent = {
           },
           {
             label: "Email our team",
-            href: "mailto:hello@jethavictus.com",
+            href: "mailto:info@jethavictus.com",
           },
         ],
       },

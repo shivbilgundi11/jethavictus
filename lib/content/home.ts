@@ -45,7 +45,7 @@ export const homeContent = {
   brand: {
     name: "JETHAVICTUS",
     suffix: "SOLUTIONS",
-    email: "hello@jethavictus.com",
+    email: "info@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
     tagline: "Engineered for victory. Built for the future.",
@@ -68,8 +68,8 @@ export const homeContent = {
         href: "#contact",
       },
       {
-        label: "hello@jethavictus.com",
-        href: "mailto:hello@jethavictus.com",
+        label: "info@jethavictus.com",
+        href: "mailto:info@jethavictus.com",
       },
     ] satisfies NavigationItem[],
 
@@ -544,7 +544,7 @@ export const homeContent = {
           },
           {
             label: "Email our team",
-            href: "mailto:hello@jethavictus.com",
+            href: "mailto:info@jethavictus.com",
           },
         ],
       },

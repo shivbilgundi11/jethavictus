@@ -69,7 +69,7 @@ export default function TermsPage() {
             "If you have any questions regarding these Terms and Conditions, please contact us at:",
           ],
           list: [
-            "Email: hello@jethavictus.com",
+            "Email: info@jethavictus.com",
             "Branch locations: Corporate headquarters, technology delivery center, regional consulting office, and client experience center by appointment.",
           ],
         },

@@ -47,7 +47,7 @@ export const careersContent = {
     name: "JETHAVICTUS",
     suffix: "SOLUTIONS",
     initials: "JV",
-    email: "hello@jethavictus.com",
+    email: "info@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
     tagline: "Engineered for victory. Built for the future.",
@@ -526,7 +526,7 @@ export const careersContent = {
           },
           {
             label: "Email our team",
-            href: "mailto:hello@jethavictus.com",
+            href: "mailto:info@jethavictus.com",
           },
         ],
       },

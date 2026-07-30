@@ -36,7 +36,7 @@ export const aboutContent = {
     name: "JETHAVICTUS",
     suffix: "SOLUTIONS",
     initials: "JV",
-    email: "hello@jethavictus.com",
+    email: "info@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
     tagline: "Engineered for victory. Built for the future.",
@@ -59,8 +59,8 @@ export const aboutContent = {
         href: "/#contact",
       },
       {
-        label: "hello@jethavictus.com",
-        href: "mailto:hello@jethavictus.com",
+        label: "info@jethavictus.com",
+        href: "mailto:info@jethavictus.com",
       },
     ] satisfies NavigationItem[],
 
@@ -101,7 +101,7 @@ export const aboutContent = {
     },
     secondaryCta: {
       label: "Start a conversation",
-      href: "/#contact",
+      href: "/contact",
     },
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2400&q=90",
@@ -401,7 +401,7 @@ export const aboutContent = {
           },
           {
             label: "Email our team",
-            href: "mailto:hello@jethavictus.com",
+            href: "mailto:info@jethavictus.com",
           },
         ],
       },

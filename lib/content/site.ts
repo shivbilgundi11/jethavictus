@@ -15,7 +15,7 @@ export const siteContent = {
     name: "JETHAVICTUS",
     suffix: "SOLUTIONS",
     initials: "JV",
-    email: "hello@jethavictus.com",
+    email: "info@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
     tagline: "Engineered for victory. Built for the future.",
@@ -60,8 +60,8 @@ export const siteContent = {
       href: "/careers",
     },
     {
-      label: "hello@jethavictus.com",
-      href: "mailto:hello@jethavictus.com",
+      label: "info@jethavictus.com",
+      href: "mailto:info@jethavictus.com",
     },
   ] satisfies NavigationItem[],
 
@@ -222,11 +222,11 @@ export const siteContent = {
         },
         {
           label: "Business inquiries",
-          href: "mailto:business@jethavictus.com",
+          href: "mailto:info@jethavictus.com",
         },
         {
           label: "Email our team",
-          href: "mailto:hello@jethavictus.com",
+          href: "mailto:info@jethavictus.com",
         },
       ],
     },

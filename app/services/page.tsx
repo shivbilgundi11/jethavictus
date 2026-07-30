@@ -327,7 +327,7 @@ export default function ServicesPage() {
                     </div>
 
                     <Link
-                      href="/#contact"
+                      href="/contact"
                       className="group bg-brand-blue text-content-inverse hover:bg-brand-blue-dark mt-10 inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
                     >
                       Discuss this capability

@@ -40,7 +40,7 @@ export const contactContent = {
     name: "JETHAVICTUS",
     suffix: "SOLUTIONS",
     initials: "JV",
-    email: "hello@jethavictus.com",
+    email: "info@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
     googleFormUrl: "https://forms.gle/REPLACE_WITH_JETHAVICTUS_CONTACT_FORM",
@@ -130,26 +130,26 @@ export const contactContent = {
     {
       icon: "email",
       label: "General inquiries",
-      value: "hello@jethavictus.com",
+      value: "info@jethavictus.com",
       description:
         "For general questions, company information, and initial introductions.",
-      href: "mailto:hello@jethavictus.com",
+      href: "mailto:info@jethavictus.com",
     },
     {
       icon: "business",
       label: "Business and consulting",
-      value: "business@jethavictus.com",
+      value: "info@jethavictus.com",
       description:
         "For consulting engagements, technology programs, partnerships, and enterprise opportunities.",
-      href: "mailto:business@jethavictus.com",
+      href: "mailto:info@jethavictus.com",
     },
     {
       icon: "careers",
       label: "Careers",
-      value: "careers@jethavictus.com",
+      value: "info@jethavictus.com",
       description:
         "For career-related questions and information about open opportunities.",
-      href: "mailto:careers@jethavictus.com",
+      href: "mailto:info@jethavictus.com",
     },
     {
       icon: "phone",
@@ -180,7 +180,7 @@ export const contactContent = {
         ],
         phone: "+1 (000) 000-0000",
         phoneHref: "tel:+10000000000",
-        email: "hello@jethavictus.com",
+        email: "info@jethavictus.com",
         hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
         mapUrl: "https://maps.google.com/?q=REPLACE+WITH+HEADQUARTERS+ADDRESS",
         image:
@@ -200,7 +200,7 @@ export const contactContent = {
         ],
         phone: "+91 00000 00000",
         phoneHref: "tel:+910000000000",
-        email: "delivery@jethavictus.com",
+        email: "info@jethavictus.com",
         hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
         mapUrl:
           "https://maps.google.com/?q=REPLACE+WITH+DELIVERY+CENTER+ADDRESS",
@@ -220,7 +220,7 @@ export const contactContent = {
         ],
         phone: "+1 (000) 000-0000",
         phoneHref: "tel:+10000000000",
-        email: "regional@jethavictus.com",
+        email: "info@jethavictus.com",
         hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
         mapUrl:
           "https://maps.google.com/?q=REPLACE+WITH+REGIONAL+OFFICE+ADDRESS",
@@ -240,7 +240,7 @@ export const contactContent = {
         ],
         phone: "+44 00 0000 0000",
         phoneHref: "tel:+440000000000",
-        email: "experience@jethavictus.com",
+        email: "info@jethavictus.com",
         hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Appointments recommended"],
         mapUrl:
           "https://maps.google.com/?q=REPLACE+WITH+EXPERIENCE+CENTER+ADDRESS",
@@ -373,7 +373,7 @@ export const contactContent = {
           },
           {
             label: "Business inquiries",
-            href: "mailto:business@jethavictus.com",
+            href: "mailto:info@jethavictus.com",
           },
           {
             label: "Careers",
@@ -381,7 +381,7 @@ export const contactContent = {
           },
           {
             label: "Email our team",
-            href: "mailto:hello@jethavictus.com",
+            href: "mailto:info@jethavictus.com",
           },
         ],
       },
