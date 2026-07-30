@@ -94,7 +94,17 @@ export function SiteFooter() {
             rights reserved.
           </p>
 
-          <p>{brand.tagline}</p>
+          <div className="flex gap-6" aria-label="Legal links">
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-white"
+            >
+              Privacy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-white">
+              Terms
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

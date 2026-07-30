@@ -122,6 +122,22 @@ export const siteContent = {
         image:
           "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
       },
+      privacy: {
+        path: "/privacy",
+        title: "Privacy Policy",
+        description:
+          "Read the Jethavictus Solutions website privacy policy, including how we collect, use, share, and protect website inquiry data.",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      },
+      terms: {
+        path: "/terms",
+        title: "Terms and Conditions",
+        description:
+          "Read the Jethavictus Solutions website terms and conditions for acceptable use, intellectual property, liability, and governing law.",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      },
     },
   },
 
