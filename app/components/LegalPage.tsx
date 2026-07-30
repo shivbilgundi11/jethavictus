@@ -44,7 +44,7 @@ export function LegalPage({
       </section>
 
       <article className="mx-auto w-full max-w-360 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-[0.58fr_1.42fr] lg:gap-20">
+        <div className="flex flex-col gap-y-5 md:gap-y-10">
           <aside className="border-line-default text-content-muted hidden border-t pt-6 text-xs font-bold tracking-[0.18em] uppercase lg:block">
             Legal
           </aside>
