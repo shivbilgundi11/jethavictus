@@ -82,11 +82,13 @@ export default function ContactPage() {
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
-                href={hero.primaryCta.href}
-                className="group bg-surface-page text-brand-navy hover:bg-surface-muted inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
+                href={brand.googleFormUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group border-brand-blue bg-brand-blue text-content-inverse inline-flex items-center justify-between gap-10 border px-6 py-4 text-sm font-bold transition-colors hover:border-white hover:bg-transparent hover:text-white"
               >
-                {hero.primaryCta.label}
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                Fill contact form
+                <ExternalLink className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               <a

@@ -43,6 +43,7 @@ export const contactContent = {
     email: "hello@jethavictus.com",
     website: "https://www.jethavictus.com",
     websiteLabel: "www.jethavictus.com",
+    googleFormUrl: "https://forms.gle/REPLACE_WITH_JETHAVICTUS_CONTACT_FORM",
     tagline: "Engineered for victory. Built for the future.",
     description:
       "High-performance technology consulting for organizations that refuse to settle for average.",
