@@ -10,6 +10,7 @@ export type JobPosting = {
   icon: CareerIconName;
   title: string;
   department: string;
+  applyLink: string;
   location: string;
   employmentType: string;
   experience: string;
@@ -220,37 +221,40 @@ export const careersContent = {
     description:
       "Review our current opportunities below. Each application is submitted through our external Google Form.",
 
+    // Please follow the format as the commented openning code for posting new opennings
     jobs: [
-      // {
-      //   slug: "senior-cloud-architect",
-      //   icon: "cloud",
-      //   title: "Senior Cloud Architect",
-      //   department: "Cloud & Infrastructure",
-      //   location: "Remote / Hybrid",
-      //   employmentType: "Full-time",
-      //   experience: "7+ years",
-      //   summary:
-      //     "Lead the architecture and delivery of secure, resilient cloud platforms for enterprise clients undergoing modernization and transformation.",
-      //   responsibilities: [
-      //     "Design cloud and hybrid-cloud architectures aligned with business, security, and operational requirements.",
-      //     "Lead workload assessments, migration planning, and modernization programs.",
-      //     "Define cloud governance, networking, identity, observability, resilience, and cost-management standards.",
-      //     "Guide engineering teams through implementation and critical technical decisions.",
-      //     "Present architectural recommendations and tradeoffs to technical and executive stakeholders.",
-      //   ],
-      //   requirements: [
-      //     "Strong experience designing and operating enterprise AWS environments.",
-      //     "Deep knowledge of cloud networking, identity, security, infrastructure automation, and platform operations.",
-      //     "Experience leading cloud migration or modernization initiatives.",
-      //     "Ability to translate business requirements into clear technical architecture.",
-      //     "Strong written, verbal, and stakeholder communication skills.",
-      //   ],
-      //   preferredQualifications: [
-      //     "AWS professional-level certification.",
-      //     "Experience with Terraform, Kubernetes, CI/CD, or cloud-native application architecture.",
-      //     "Consulting or client-facing delivery experience.",
-      //   ],
-      // },
+      {
+        slug: "senior-cloud-architect",
+        icon: "cloud",
+        title: "Senior Cloud Architect",
+        department: "Cloud & Infrastructure",
+        location: "Remote / Hybrid",
+        employmentType: "Full-time",
+        experience: "7+ years",
+        applyLink:
+          "https://docs.google.com/forms/d/e/1FAIpQLSfSN8RGZuuDP18HoA6JGgMYG9JlcmoS3MQ91N4TA1woKmM_CA/viewform?usp=publish-editor",
+        summary:
+          "Lead the architecture and delivery of secure, resilient cloud platforms for enterprise clients undergoing modernization and transformation.",
+        responsibilities: [
+          "Design cloud and hybrid-cloud architectures aligned with business, security, and operational requirements.",
+          "Lead workload assessments, migration planning, and modernization programs.",
+          "Define cloud governance, networking, identity, observability, resilience, and cost-management standards.",
+          "Guide engineering teams through implementation and critical technical decisions.",
+          "Present architectural recommendations and tradeoffs to technical and executive stakeholders.",
+        ],
+        requirements: [
+          "Strong experience designing and operating enterprise AWS environments.",
+          "Deep knowledge of cloud networking, identity, security, infrastructure automation, and platform operations.",
+          "Experience leading cloud migration or modernization initiatives.",
+          "Ability to translate business requirements into clear technical architecture.",
+          "Strong written, verbal, and stakeholder communication skills.",
+        ],
+        preferredQualifications: [
+          "AWS professional-level certification.",
+          "Experience with Terraform, Kubernetes, CI/CD, or cloud-native application architecture.",
+          "Consulting or client-facing delivery experience.",
+        ],
+      },
     ] satisfies JobPosting[],
   },
 

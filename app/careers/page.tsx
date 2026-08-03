@@ -26,7 +26,11 @@ import {
   Workflow,
 } from "lucide-react";
 
-import { careersContent, type CareerIconName } from "@/lib/content/careers";
+import {
+  careersContent,
+  JobPosting,
+  type CareerIconName,
+} from "@/lib/content/careers";
 import { getPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = getPageMetadata("careers");
@@ -265,9 +269,9 @@ export default function CareersPage() {
             </p>
           </div>
 
-          <div className="border-line-default mt-10 border-t">
+          <div className="border-line-default mt-10">
             {openings &&
-              openings.jobs.map((job: any) => {
+              openings.jobs.map((job: JobPosting) => {
                 const Icon = jobIcons[job.icon as CareerIconName];
 
                 return (
@@ -329,7 +333,7 @@ export default function CareersPage() {
                           </p>
 
                           <a
-                            href={applicationFormUrl}
+                            href={job.applyLink}
                             target="_blank"
                             rel="noreferrer"
                             className="group bg-brand-blue text-content-inverse hover:bg-brand-blue-dark mt-8 inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
