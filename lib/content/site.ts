@@ -87,40 +87,35 @@ export const siteContent = {
         title: "Jethavictus Solutions",
         description:
           "High-performance technology consulting across AI, cloud, cybersecurity, ERP, blockchain, IoT, and data science.",
-        image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+        image: "/home-hero-bg.jpg",
       },
       about: {
         path: "/about",
         title: "About Jethavictus Solutions",
         description:
           "Learn how Jethavictus Solutions confronts enterprise technology complexity with strategic clarity, technical precision, and accountable delivery.",
-        image:
-          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+        image: "/about-hero-bg.avif",
       },
       services: {
         path: "/services",
         title: "Technology Services",
         description:
           "Explore Jethavictus Solutions services across IT consulting, artificial intelligence, cloud architecture, cybersecurity, ERP, blockchain, IoT, and data science.",
-        image:
-          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+        image: "/services-hero-bg.avif",
       },
       careers: {
         path: "/careers",
         title: "Careers",
         description:
           "Explore technology consulting careers at Jethavictus Solutions across cloud, artificial intelligence, cybersecurity, enterprise applications, and data engineering.",
-        image:
-          "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+        image: "/career-hero-bg.avif",
       },
       contact: {
         path: "/contact",
         title: "Contact",
         description:
           "Contact Jethavictus Solutions for enterprise technology consulting, partnerships, careers, and regional office information.",
-        image:
-          "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
+        image: "/contact-hero-bg.avif",
       },
       privacy: {
         path: "/privacy",

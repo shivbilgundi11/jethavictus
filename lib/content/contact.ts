@@ -112,8 +112,7 @@ export const contactContent = {
       href: "#offices",
     },
 
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2400&q=90",
+    image: "/contact-hero-bg.avif",
     imageAlt: "Modern corporate office and enterprise technology workspace",
   },
 

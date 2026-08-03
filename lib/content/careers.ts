@@ -120,8 +120,7 @@ export const careersContent = {
       href: "/about#introduction",
     },
 
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=90",
+    image: "/career-hero-bg.avif",
     imageAlt: "Technology professionals collaborating in a modern workplace",
   },
 
