@@ -266,148 +266,151 @@ export default function CareersPage() {
           </div>
 
           <div className="border-line-default mt-10 border-t">
-            {openings.jobs.map((job) => {
-              const Icon = jobIcons[job.icon];
+            {openings &&
+              openings.jobs.map((job: any) => {
+                const Icon = jobIcons[job.icon as CareerIconName];
 
-              return (
-                <details
-                  key={job.slug}
-                  id={job.slug}
-                  className="group border-line-default scroll-mt-24 border-b"
-                >
-                  <summary className="grid cursor-pointer list-none gap-6 py-7 md:grid-cols-[64px_1fr_auto] md:items-center lg:py-9 [&::-webkit-details-marker]:hidden">
-                    <span className="bg-brand-ice text-brand-blue group-open:bg-brand-navy group-open:text-brand-sky flex h-14 w-14 items-center justify-center transition-colors">
-                      <Icon className="h-7 w-7" />
-                    </span>
+                return (
+                  <details
+                    key={job.slug}
+                    id={job.slug}
+                    className="group border-line-default scroll-mt-24 border-b"
+                  >
+                    <summary className="grid cursor-pointer list-none gap-6 py-7 md:grid-cols-[64px_1fr_auto] md:items-center lg:py-9 [&::-webkit-details-marker]:hidden">
+                      <span className="bg-brand-ice text-brand-blue group-open:bg-brand-navy group-open:text-brand-sky flex h-14 w-14 items-center justify-center transition-colors">
+                        <Icon className="h-7 w-7" />
+                      </span>
 
-                    <div>
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                        <h3 className="text-brand-navy text-2xl font-medium tracking-tight sm:text-3xl">
-                          {job.title}
-                        </h3>
-
-                        <span className="bg-surface-muted text-content-muted inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[0.14em] uppercase">
-                          <CircleDot className="text-brand-blue h-3.5 w-3.5" />
-                          Open
-                        </span>
-                      </div>
-
-                      <div className="text-content-muted mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-                        <span className="flex items-center gap-2">
-                          <BriefcaseBusiness className="text-brand-blue h-4 w-4" />
-                          {job.department}
-                        </span>
-
-                        <span className="flex items-center gap-2">
-                          <MapPin className="text-brand-blue h-4 w-4" />
-                          {job.location}
-                        </span>
-
-                        <span className="flex items-center gap-2">
-                          <Timer className="text-brand-blue h-4 w-4" />
-                          {job.employmentType}
-                        </span>
-
-                        <span className="flex items-center gap-2">
-                          <Sparkles className="text-brand-blue h-4 w-4" />
-                          {job.experience}
-                        </span>
-                      </div>
-                    </div>
-
-                    <span className="border-line-default text-brand-blue group-open:bg-brand-blue group-open:text-content-inverse flex h-12 w-12 items-center justify-center border transition-colors">
-                      <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
-                    </span>
-                  </summary>
-
-                  <div className="pb-10 md:pl-20 lg:pb-14">
-                    <div className="border-line-subtle grid gap-10 border-t pt-8 xl:grid-cols-[0.8fr_1.2fr] xl:gap-16">
                       <div>
-                        <p className="text-content-secondary text-lg leading-8">
-                          {job.summary}
-                        </p>
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                          <h3 className="text-brand-navy text-2xl font-medium tracking-tight sm:text-3xl">
+                            {job.title}
+                          </h3>
 
-                        <a
-                          href={applicationFormUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="group bg-brand-blue text-content-inverse hover:bg-brand-blue-dark mt-8 inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
-                        >
-                          Apply through Google Form
-                          <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </a>
-
-                        <p className="text-content-muted mt-4 max-w-sm text-xs leading-6">
-                          The application opens in a new tab and is submitted
-                          through Google Forms.
-                        </p>
-                      </div>
-
-                      <div className="grid gap-9 lg:grid-cols-2">
-                        <div>
-                          <p className="text-brand-blue text-xs font-bold tracking-[0.18em] uppercase">
-                            Responsibilities
-                          </p>
-
-                          <ul className="mt-5 space-y-4">
-                            {job.responsibilities.map((responsibility) => (
-                              <li
-                                key={responsibility}
-                                className="text-content-secondary flex items-start gap-3 text-sm leading-7"
-                              >
-                                <span className="bg-brand-ice text-brand-blue mt-1 flex h-5 w-5 shrink-0 items-center justify-center">
-                                  <Check className="h-3.5 w-3.5" />
-                                </span>
-
-                                <span>{responsibility}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          <span className="bg-surface-muted text-content-muted inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[0.14em] uppercase">
+                            <CircleDot className="text-brand-blue h-3.5 w-3.5" />
+                            Open
+                          </span>
                         </div>
 
+                        <div className="text-content-muted mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+                          <span className="flex items-center gap-2">
+                            <BriefcaseBusiness className="text-brand-blue h-4 w-4" />
+                            {job.department}
+                          </span>
+
+                          <span className="flex items-center gap-2">
+                            <MapPin className="text-brand-blue h-4 w-4" />
+                            {job.location}
+                          </span>
+
+                          <span className="flex items-center gap-2">
+                            <Timer className="text-brand-blue h-4 w-4" />
+                            {job.employmentType}
+                          </span>
+
+                          <span className="flex items-center gap-2">
+                            <Sparkles className="text-brand-blue h-4 w-4" />
+                            {job.experience}
+                          </span>
+                        </div>
+                      </div>
+
+                      <span className="border-line-default text-brand-blue group-open:bg-brand-blue group-open:text-content-inverse flex h-12 w-12 items-center justify-center border transition-colors">
+                        <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                      </span>
+                    </summary>
+
+                    <div className="pb-10 md:pl-20 lg:pb-14">
+                      <div className="border-line-subtle grid gap-10 border-t pt-8 xl:grid-cols-[0.8fr_1.2fr] xl:gap-16">
                         <div>
-                          <p className="text-brand-blue text-xs font-bold tracking-[0.18em] uppercase">
-                            Requirements
+                          <p className="text-content-secondary text-lg leading-8">
+                            {job.summary}
                           </p>
 
-                          <ul className="mt-5 space-y-4">
-                            {job.requirements.map((requirement) => (
-                              <li
-                                key={requirement}
-                                className="text-content-secondary flex items-start gap-3 text-sm leading-7"
-                              >
-                                <span className="bg-brand-blue mt-2 h-1.5 w-1.5 shrink-0" />
-                                <span>{requirement}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          <a
+                            href={applicationFormUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group bg-brand-blue text-content-inverse hover:bg-brand-blue-dark mt-8 inline-flex items-center justify-between gap-10 px-6 py-4 text-sm font-bold transition-colors"
+                          >
+                            Apply through Google Form
+                            <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          </a>
 
-                          <div className="border-line-subtle mt-8 border-t pt-7">
+                          <p className="text-content-muted mt-4 max-w-sm text-xs leading-6">
+                            The application opens in a new tab and is submitted
+                            through Google Forms.
+                          </p>
+                        </div>
+
+                        <div className="grid gap-9 lg:grid-cols-2">
+                          <div>
                             <p className="text-brand-blue text-xs font-bold tracking-[0.18em] uppercase">
-                              Preferred
+                              Responsibilities
                             </p>
 
-                            <ul className="mt-5 space-y-3">
-                              {job.preferredQualifications.map(
-                                (qualification) => (
+                            <ul className="mt-5 space-y-4">
+                              {job?.responsibilities?.map(
+                                (responsibility: any) => (
                                   <li
-                                    key={qualification}
-                                    className="text-content-muted flex items-start gap-3 text-sm leading-6"
+                                    key={responsibility}
+                                    className="text-content-secondary flex items-start gap-3 text-sm leading-7"
                                   >
-                                    <span className="bg-content-subtle mt-2 h-1.5 w-1.5 shrink-0" />
-                                    <span>{qualification}</span>
+                                    <span className="bg-brand-ice text-brand-blue mt-1 flex h-5 w-5 shrink-0 items-center justify-center">
+                                      <Check className="h-3.5 w-3.5" />
+                                    </span>
+
+                                    <span>{responsibility}</span>
                                   </li>
                                 ),
                               )}
                             </ul>
                           </div>
+
+                          <div>
+                            <p className="text-brand-blue text-xs font-bold tracking-[0.18em] uppercase">
+                              Requirements
+                            </p>
+
+                            <ul className="mt-5 space-y-4">
+                              {job?.requirements?.map((requirement: any) => (
+                                <li
+                                  key={requirement}
+                                  className="text-content-secondary flex items-start gap-3 text-sm leading-7"
+                                >
+                                  <span className="bg-brand-blue mt-2 h-1.5 w-1.5 shrink-0" />
+                                  <span>{requirement}</span>
+                                </li>
+                              ))}
+                            </ul>
+
+                            <div className="border-line-subtle mt-8 border-t pt-7">
+                              <p className="text-brand-blue text-xs font-bold tracking-[0.18em] uppercase">
+                                Preferred
+                              </p>
+
+                              <ul className="mt-5 space-y-3">
+                                {job?.preferredQualifications?.map(
+                                  (qualification: any) => (
+                                    <li
+                                      key={qualification}
+                                      className="text-content-muted flex items-start gap-3 text-sm leading-6"
+                                    >
+                                      <span className="bg-content-subtle mt-2 h-1.5 w-1.5 shrink-0" />
+                                      <span>{qualification}</span>
+                                    </li>
+                                  ),
+                                )}
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </details>
-              );
-            })}
+                  </details>
+                );
+              })}
           </div>
         </div>
       </section>

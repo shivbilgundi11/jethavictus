@@ -221,171 +221,36 @@ export const careersContent = {
       "Review our current opportunities below. Each application is submitted through our external Google Form.",
 
     jobs: [
-      {
-        slug: "senior-cloud-architect",
-        icon: "cloud",
-        title: "Senior Cloud Architect",
-        department: "Cloud & Infrastructure",
-        location: "Remote / Hybrid",
-        employmentType: "Full-time",
-        experience: "7+ years",
-        summary:
-          "Lead the architecture and delivery of secure, resilient cloud platforms for enterprise clients undergoing modernization and transformation.",
-
-        responsibilities: [
-          "Design cloud and hybrid-cloud architectures aligned with business, security, and operational requirements.",
-          "Lead workload assessments, migration planning, and modernization programs.",
-          "Define cloud governance, networking, identity, observability, resilience, and cost-management standards.",
-          "Guide engineering teams through implementation and critical technical decisions.",
-          "Present architectural recommendations and tradeoffs to technical and executive stakeholders.",
-        ],
-
-        requirements: [
-          "Strong experience designing and operating enterprise AWS environments.",
-          "Deep knowledge of cloud networking, identity, security, infrastructure automation, and platform operations.",
-          "Experience leading cloud migration or modernization initiatives.",
-          "Ability to translate business requirements into clear technical architecture.",
-          "Strong written, verbal, and stakeholder communication skills.",
-        ],
-
-        preferredQualifications: [
-          "AWS professional-level certification.",
-          "Experience with Terraform, Kubernetes, CI/CD, or cloud-native application architecture.",
-          "Consulting or client-facing delivery experience.",
-        ],
-      },
-      {
-        slug: "ai-machine-learning-engineer",
-        icon: "ai",
-        title: "AI & Machine Learning Engineer",
-        department: "Artificial Intelligence",
-        location: "Remote / Hybrid",
-        employmentType: "Full-time",
-        experience: "4+ years",
-        summary:
-          "Design and deploy production-ready artificial intelligence and machine learning solutions that improve enterprise decision-making and automate complex work.",
-
-        responsibilities: [
-          "Develop and deploy machine learning models for enterprise use cases.",
-          "Build reliable data preparation, training, evaluation, and inference pipelines.",
-          "Design solutions involving language models, natural language processing, predictive analytics, or intelligent automation.",
-          "Collaborate with cloud, data, security, and application teams.",
-          "Monitor model quality, performance, reliability, and responsible-use requirements.",
-        ],
-
-        requirements: [
-          "Professional experience developing machine learning or applied AI systems.",
-          "Strong Python skills and familiarity with common machine learning frameworks.",
-          "Understanding of model evaluation, data quality, deployment, and monitoring.",
-          "Experience working with cloud-based data or machine learning services.",
-          "Ability to communicate technical findings to non-specialist stakeholders.",
-        ],
-
-        preferredQualifications: [
-          "Experience with generative AI, retrieval-augmented generation, or language-model applications.",
-          "Experience with MLOps platforms and production model operations.",
-          "Knowledge of enterprise AI governance and security.",
-        ],
-      },
-      {
-        slug: "cybersecurity-consultant",
-        icon: "security",
-        title: "Cybersecurity Consultant",
-        department: "Cybersecurity & Risk",
-        location: "Remote / Hybrid",
-        employmentType: "Full-time",
-        experience: "5+ years",
-        summary:
-          "Help enterprise clients evaluate cyber risk, improve security architecture, and build stronger operational resilience.",
-
-        responsibilities: [
-          "Conduct security architecture reviews, risk assessments, and maturity evaluations.",
-          "Support zero-trust, identity, network security, and cloud security initiatives.",
-          "Develop practical remediation roadmaps connected to business risk.",
-          "Assist with compliance readiness across relevant security standards.",
-          "Support incident-response planning, tabletop exercises, and security operations improvement.",
-        ],
-
-        requirements: [
-          "Professional experience in cybersecurity consulting, architecture, engineering, or risk management.",
-          "Strong knowledge of identity, cloud security, network security, and vulnerability management.",
-          "Experience communicating risk to technical and executive audiences.",
-          "Understanding of common security frameworks and control environments.",
-          "Strong analytical, documentation, and client-facing skills.",
-        ],
-
-        preferredQualifications: [
-          "CISSP, CISM, CCSP, or similar certification.",
-          "Experience with SOC 2, ISO 27001, HIPAA, or PCI-DSS.",
-          "Penetration-testing or incident-response experience.",
-        ],
-      },
-      {
-        slug: "erp-solutions-consultant",
-        icon: "erp",
-        title: "ERP Solutions Consultant",
-        department: "Enterprise Applications",
-        location: "Remote / Hybrid",
-        employmentType: "Full-time",
-        experience: "5+ years",
-        summary:
-          "Lead enterprise process improvement and ERP implementation initiatives that connect operations, data, and organizational decision-making.",
-
-        responsibilities: [
-          "Assess current business processes, systems, data flows, and operating challenges.",
-          "Support ERP platform evaluation, solution design, configuration, and implementation.",
-          "Translate business requirements into functional and technical specifications.",
-          "Coordinate process owners, technical teams, vendors, and executive stakeholders.",
-          "Support data migration, integration, testing, training, and post-launch optimization.",
-        ],
-
-        requirements: [
-          "Experience delivering ERP implementation or transformation programs.",
-          "Strong understanding of enterprise business processes and system integration.",
-          "Ability to facilitate requirements and process-design workshops.",
-          "Experience supporting testing, adoption, and organizational change.",
-          "Strong project, stakeholder, and communication skills.",
-        ],
-
-        preferredQualifications: [
-          "Experience with a major enterprise ERP platform.",
-          "Business process reengineering experience.",
-          "Consulting or multi-client delivery experience.",
-        ],
-      },
-      {
-        slug: "senior-data-engineer",
-        icon: "data",
-        title: "Senior Data Engineer",
-        department: "Data & Analytics",
-        location: "Remote / Hybrid",
-        employmentType: "Full-time",
-        experience: "5+ years",
-        summary:
-          "Build scalable enterprise data platforms that support analytics, artificial intelligence, operational reporting, and trusted decision-making.",
-
-        responsibilities: [
-          "Design and build scalable batch and real-time data pipelines.",
-          "Develop cloud-based data platforms, warehouses, and lakehouse architectures.",
-          "Integrate operational, application, IoT, and third-party data sources.",
-          "Implement data quality, observability, lineage, and governance controls.",
-          "Collaborate with analytics, AI, application, and infrastructure teams.",
-        ],
-
-        requirements: [
-          "Strong experience building production data pipelines and platforms.",
-          "Proficiency with SQL and at least one general-purpose programming language.",
-          "Experience with cloud data services, orchestration, and distributed processing.",
-          "Knowledge of dimensional modeling, data quality, and platform reliability.",
-          "Ability to make pragmatic architecture and engineering tradeoffs.",
-        ],
-
-        preferredQualifications: [
-          "Experience with streaming data or IoT platforms.",
-          "Experience supporting machine learning and advanced analytics workloads.",
-          "Knowledge of modern data governance and cataloging tools.",
-        ],
-      },
+      // {
+      //   slug: "senior-cloud-architect",
+      //   icon: "cloud",
+      //   title: "Senior Cloud Architect",
+      //   department: "Cloud & Infrastructure",
+      //   location: "Remote / Hybrid",
+      //   employmentType: "Full-time",
+      //   experience: "7+ years",
+      //   summary:
+      //     "Lead the architecture and delivery of secure, resilient cloud platforms for enterprise clients undergoing modernization and transformation.",
+      //   responsibilities: [
+      //     "Design cloud and hybrid-cloud architectures aligned with business, security, and operational requirements.",
+      //     "Lead workload assessments, migration planning, and modernization programs.",
+      //     "Define cloud governance, networking, identity, observability, resilience, and cost-management standards.",
+      //     "Guide engineering teams through implementation and critical technical decisions.",
+      //     "Present architectural recommendations and tradeoffs to technical and executive stakeholders.",
+      //   ],
+      //   requirements: [
+      //     "Strong experience designing and operating enterprise AWS environments.",
+      //     "Deep knowledge of cloud networking, identity, security, infrastructure automation, and platform operations.",
+      //     "Experience leading cloud migration or modernization initiatives.",
+      //     "Ability to translate business requirements into clear technical architecture.",
+      //     "Strong written, verbal, and stakeholder communication skills.",
+      //   ],
+      //   preferredQualifications: [
+      //     "AWS professional-level certification.",
+      //     "Experience with Terraform, Kubernetes, CI/CD, or cloud-native application architecture.",
+      //     "Consulting or client-facing delivery experience.",
+      //   ],
+      // },
     ] satisfies JobPosting[],
   },
 
