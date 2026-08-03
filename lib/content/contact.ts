@@ -167,88 +167,31 @@ export const contactContent = {
     title: "Connected globally. Available locally.",
     description:
       "Jethavictus supports clients across regions through a network of consulting, engineering, and delivery offices.",
+    emptyTitle: "No office address available for now.",
+    emptyDescription:
+      "Our office is getting ready and we will share the address here in the next few days.",
 
     offices: [
-      {
-        name: "Corporate Headquarters",
-        type: "Executive & Consulting Office",
-        city: "City Name",
-        country: "Country",
-        addressLines: [
-          "Building or Business Park",
-          "Street Address, Floor or Suite",
-          "City, State or Region, Postal Code",
-        ],
-        phone: "+1 (000) 000-0000",
-        phoneHref: "tel:+10000000000",
-        email: "info@jethavictus.com",
-        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
-        mapUrl: "https://maps.google.com/?q=REPLACE+WITH+HEADQUARTERS+ADDRESS",
-        image:
-          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
-        imageAlt: "Modern corporate headquarters office",
-        isPrimary: true,
-      },
-      {
-        name: "Technology Delivery Center",
-        type: "Engineering & Delivery Office",
-        city: "City Name",
-        country: "Country",
-        addressLines: [
-          "Technology Campus or Building",
-          "Street Address, Floor or Suite",
-          "City, State or Region, Postal Code",
-        ],
-        phone: "+91 00000 00000",
-        phoneHref: "tel:+910000000000",
-        email: "info@jethavictus.com",
-        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
-        mapUrl:
-          "https://maps.google.com/?q=REPLACE+WITH+DELIVERY+CENTER+ADDRESS",
-        image:
-          "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=85",
-        imageAlt: "Technology engineering and delivery office",
-      },
-      {
-        name: "Regional Consulting Office",
-        type: "Client Advisory Office",
-        city: "City Name",
-        country: "Country",
-        addressLines: [
-          "Business District or Office Tower",
-          "Street Address, Floor or Suite",
-          "City, State or Region, Postal Code",
-        ],
-        phone: "+1 (000) 000-0000",
-        phoneHref: "tel:+10000000000",
-        email: "info@jethavictus.com",
-        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
-        mapUrl:
-          "https://maps.google.com/?q=REPLACE+WITH+REGIONAL+OFFICE+ADDRESS",
-        image:
-          "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
-        imageAlt: "Regional enterprise consulting office",
-      },
-      {
-        name: "Client Experience Center",
-        type: "Innovation & Collaboration Office",
-        city: "City Name",
-        country: "Country",
-        addressLines: [
-          "Innovation Center or Business Park",
-          "Street Address, Floor or Suite",
-          "City, State or Region, Postal Code",
-        ],
-        phone: "+44 00 0000 0000",
-        phoneHref: "tel:+440000000000",
-        email: "info@jethavictus.com",
-        hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Appointments recommended"],
-        mapUrl:
-          "https://maps.google.com/?q=REPLACE+WITH+EXPERIENCE+CENTER+ADDRESS",
-        image:
-          "https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=85",
-        imageAlt: "Client innovation and collaboration center",
-      },
+      // {
+      //   name: "Corporate Headquarters",
+      //   type: "Executive & Consulting Office",
+      //   city: "City Name",
+      //   country: "Country",
+      //   addressLines: [
+      //     "Building or Business Park",
+      //     "Street Address, Floor or Suite",
+      //     "City, State or Region, Postal Code",
+      //   ],
+      //   phone: "+1 (000) 000-0000",
+      //   phoneHref: "tel:+10000000000",
+      //   email: "info@jethavictus.com",
+      //   hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
+      //   mapUrl: "https://maps.google.com/?q=REPLACE+WITH+HEADQUARTERS+ADDRESS",
+      //   image:
+      //     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+      //   imageAlt: "Modern corporate headquarters office",
+      //   isPrimary: true,
+      // },
     ] satisfies Office[],
   },
 

@@ -19,6 +19,7 @@ import {
   contactContent,
   type ContactMethod,
   type ContactMethodIcon,
+  type Office,
 } from "@/lib/content/contact";
 import { getPageMetadata } from "@/lib/seo";
 
@@ -205,127 +206,149 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-x-7 gap-y-12 lg:grid-cols-2">
-            {officeSection.offices.map((office) => (
-              <article
-                key={office.name}
-                className="group border-line-default bg-surface-page border"
-              >
-                <div className="bg-surface-muted relative aspect-video overflow-hidden">
-                  <Image
-                    src={office.image}
-                    alt={office.imageAlt}
-                    fill
-                    sizes="100vw"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
-                  />
+          <div className="mt-10">
+            {officeSection.offices.length > 0 ? (
+              <div className="grid gap-x-7 gap-y-12 lg:grid-cols-2">
+                {officeSection.offices.map((office: Office) => (
+                  <article
+                    key={office.name}
+                    className="group border-line-default bg-surface-page border"
+                  >
+                    <div className="bg-surface-muted relative aspect-video overflow-hidden">
+                      <Image
+                        src={office.image}
+                        alt={office.imageAlt}
+                        fill
+                        sizes="100vw"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                      />
 
-                  <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-32 bg-linear-to-t to-transparent" />
+                      <div className="from-brand-navy/70 absolute inset-x-0 bottom-0 h-32 bg-linear-to-t to-transparent" />
 
-                  {office.isPrimary && (
-                    <span className="bg-brand-blue text-content-inverse absolute top-0 left-0 px-4 py-3 text-xs font-bold tracking-[0.14em] uppercase">
-                      Primary office
-                    </span>
-                  )}
+                      {office.isPrimary && (
+                        <span className="bg-brand-blue text-content-inverse absolute top-0 left-0 px-4 py-3 text-xs font-bold tracking-[0.14em] uppercase">
+                          Primary office
+                        </span>
+                      )}
 
-                  <div className="text-content-inverse absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                    <p className="text-brand-sky text-xs font-bold tracking-[0.16em] uppercase">
-                      {office.type}
-                    </p>
-
-                    <h3 className="mt-2 text-3xl font-medium tracking-[-0.035em]">
-                      {office.name}
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-2">
-                  <div>
-                    <div className="flex items-start gap-3">
-                      <MapPin className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
-
-                      <div>
-                        <p className="text-brand-navy font-semibold">
-                          {office.city}, {office.country}
+                      <div className="text-content-inverse absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                        <p className="text-brand-sky text-xs font-bold tracking-[0.16em] uppercase">
+                          {office.type}
                         </p>
 
-                        <address className="text-content-muted mt-3 text-sm leading-7 not-italic">
-                          {office.addressLines.map((line) => (
-                            <span key={line} className="block">
-                              {line}
-                            </span>
-                          ))}
-                        </address>
+                        <h3 className="mt-2 text-3xl font-medium tracking-[-0.035em]">
+                          {office.name}
+                        </h3>
                       </div>
                     </div>
 
-                    <a
-                      href={office.mapUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group/link text-brand-blue mt-6 inline-flex items-center gap-3 text-sm font-bold"
-                    >
-                      View on Google Maps
-                      <ExternalLink className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                    </a>
-                  </div>
-
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-3">
-                      <Phone className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
-
+                    <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-2">
                       <div>
-                        <p className="text-content-muted text-xs font-bold tracking-[0.14em] uppercase">
-                          Phone
-                        </p>
+                        <div className="flex items-start gap-3">
+                          <MapPin className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
+
+                          <div>
+                            <p className="text-brand-navy font-semibold">
+                              {office.city}, {office.country}
+                            </p>
+
+                            <address className="text-content-muted mt-3 text-sm leading-7 not-italic">
+                              {office.addressLines.map((line) => (
+                                <span key={line} className="block">
+                                  {line}
+                                </span>
+                              ))}
+                            </address>
+                          </div>
+                        </div>
 
                         <a
-                          href={office.phoneHref}
-                          className="text-brand-navy hover:text-brand-blue mt-2 block text-sm font-medium"
+                          href={office.mapUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="group/link text-brand-blue mt-6 inline-flex items-center gap-3 text-sm font-bold"
                         >
-                          {office.phone}
+                          View on Google Maps
+                          <ExternalLink className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                         </a>
                       </div>
-                    </div>
 
-                    <div className="flex items-start gap-3">
-                      <Mail className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-3">
+                          <Phone className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
 
-                      <div>
-                        <p className="text-content-muted text-xs font-bold tracking-[0.14em] uppercase">
-                          Email
-                        </p>
+                          <div>
+                            <p className="text-content-muted text-xs font-bold tracking-[0.14em] uppercase">
+                              Phone
+                            </p>
 
-                        <a
-                          href={`mailto:${office.email}`}
-                          className="text-brand-navy hover:text-brand-blue mt-2 block text-sm font-medium break-all"
-                        >
-                          {office.email}
-                        </a>
-                      </div>
-                    </div>
+                            <a
+                              href={office.phoneHref}
+                              className="text-brand-navy hover:text-brand-blue mt-2 block text-sm font-medium"
+                            >
+                              {office.phone}
+                            </a>
+                          </div>
+                        </div>
 
-                    <div className="flex items-start gap-3">
-                      <Clock3 className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
+                        <div className="flex items-start gap-3">
+                          <Mail className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
 
-                      <div>
-                        <p className="text-content-muted text-xs font-bold tracking-[0.14em] uppercase">
-                          Office hours
-                        </p>
+                          <div>
+                            <p className="text-content-muted text-xs font-bold tracking-[0.14em] uppercase">
+                              Email
+                            </p>
 
-                        <div className="text-content-muted mt-2 text-sm leading-6">
-                          {office.hours.map((line) => (
-                            <span key={line} className="block">
-                              {line}
-                            </span>
-                          ))}
+                            <a
+                              href={`mailto:${office.email}`}
+                              className="text-brand-navy hover:text-brand-blue mt-2 block text-sm font-medium break-all"
+                            >
+                              {office.email}
+                            </a>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <Clock3 className="text-brand-blue mt-1 h-5 w-5 shrink-0" />
+
+                          <div>
+                            <p className="text-content-muted text-xs font-bold tracking-[0.14em] uppercase">
+                              Office hours
+                            </p>
+
+                            <div className="text-content-muted mt-2 text-sm leading-6">
+                              {office.hours.map((line) => (
+                                <span key={line} className="block">
+                                  {line}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="border-line-default bg-surface-page border p-8 sm:p-10 lg:p-12">
+                <div className="grid gap-6 sm:grid-cols-[56px_1fr] sm:items-start">
+                  <span className="bg-brand-ice text-brand-blue flex h-14 w-14 items-center justify-center">
+                    <Building2 className="h-7 w-7" />
+                  </span>
+
+                  <div>
+                    <h3 className="text-brand-navy text-2xl font-medium tracking-tight sm:text-3xl">
+                      {officeSection.emptyTitle}
+                    </h3>
+
+                    <p className="text-content-muted mt-4 max-w-2xl text-base leading-7">
+                      {officeSection.emptyDescription}
+                    </p>
                   </div>
                 </div>
-              </article>
-            ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
