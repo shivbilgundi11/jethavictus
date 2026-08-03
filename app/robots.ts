@@ -1,6 +1,7 @@
+import { siteContent } from "@/lib/content/site";
 import type { MetadataRoute } from "next";
 
-import { siteContent } from "@/lib/content/site";
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: new URL("/sitemap.xml", siteContent.siteUrl).toString(),
-    host: siteContent.siteUrl,
+    sitemap: `${siteContent.siteUrl}/sitemap.xml`,
   };
 }
