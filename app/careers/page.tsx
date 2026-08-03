@@ -270,7 +270,7 @@ export default function CareersPage() {
           </div>
 
           <div className="border-line-default mt-10">
-            {openings &&
+            {openings.jobs.length > 0 ? (
               openings.jobs.map((job: JobPosting) => {
                 const Icon = jobIcons[job.icon as CareerIconName];
 
@@ -414,7 +414,26 @@ export default function CareersPage() {
                     </div>
                   </details>
                 );
-              })}
+              })
+            ) : (
+              <div className="border-line-default bg-surface-muted border p-8 sm:p-10 lg:p-12">
+                <div className="grid gap-6 sm:grid-cols-[56px_1fr] sm:items-start">
+                  <span className="bg-brand-ice text-brand-blue flex h-14 w-14 items-center justify-center">
+                    <BriefcaseBusiness className="h-7 w-7" />
+                  </span>
+
+                  <div>
+                    <h3 className="text-brand-navy text-2xl font-medium tracking-tight sm:text-3xl">
+                      {openings.emptyTitle}
+                    </h3>
+
+                    <p className="text-content-muted mt-4 max-w-2xl text-base leading-7">
+                      {openings.emptyDescription}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
