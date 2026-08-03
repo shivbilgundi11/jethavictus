@@ -624,7 +624,7 @@ export default function HomePage() {
           alt={commitmentSection.imageAlt}
           fill
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-top"
         />
 
         <div className="bg-brand-navy/50 absolute inset-0" />

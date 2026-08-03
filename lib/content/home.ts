@@ -112,8 +112,7 @@ export const homeContent = {
       label: "Discover Jethavictus",
       href: "#about",
     },
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2400&q=90",
+    image: "/home-hero-bg.jpg",
     imageAlt: "Modern enterprise data center infrastructure",
   },
 
@@ -129,8 +128,7 @@ export const homeContent = {
         title: "Turn enterprise intelligence into decisive action",
         description:
           "Deploy practical AI systems that automate complex work, improve forecasting, and create faster decision cycles.",
-        image:
-          "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
+        image: "/artificial-intelligence.avif",
         imageAlt: "Artificial intelligence technology visualization",
         href: "#capabilities",
         linkLabel: "Learn more",
@@ -140,8 +138,7 @@ export const homeContent = {
         title: "Build the digital foundation for what comes next",
         description:
           "Modernize infrastructure with resilient cloud environments designed for security, scale, and operational efficiency.",
-        image:
-          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85",
+        image: "/cloud-modernization.avif",
         imageAlt: "Connected digital infrastructure around the world",
         href: "#capabilities",
         linkLabel: "Learn more",
@@ -151,8 +148,7 @@ export const homeContent = {
         title: "Protect critical operations in an evolving threat landscape",
         description:
           "Strengthen your organization with zero-trust architecture, proactive risk management, and prepared response capabilities.",
-        image:
-          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
+        image: "/cyber-resilience.avif",
         imageAlt: "Digital cybersecurity and identity protection",
         href: "#capabilities",
         linkLabel: "Learn more",
@@ -183,8 +179,7 @@ export const homeContent = {
         label: "See how we work",
         href: "#approach",
       },
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85",
+      image: "/our-belief.avif",
       imageAlt: "Technology consultants collaborating around a table",
     },
   },
@@ -208,8 +203,7 @@ export const homeContent = {
           "System integration and legacy modernization",
           "Digital transformation strategy and execution",
         ],
-        image:
-          "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85",
+        image: "/strategic-it-Consulting.jpg",
         imageAlt: "Enterprise technology consultants in a strategy meeting",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -225,8 +219,7 @@ export const homeContent = {
           "Natural language processing and automation",
           "Predictive analytics and decision intelligence",
         ],
-        image:
-          "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
+        image: "/ai-ml.avif",
         imageAlt: "Advanced computer processor and machine learning hardware",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -242,8 +235,7 @@ export const homeContent = {
           "Cloud-native application development and DevOps",
           "Cost optimization and cloud governance",
         ],
-        image:
-          "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1600&q=85",
+        image: "/cloud-architecture.avif",
         imageAlt: "Cloud computing and connected data center infrastructure",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -259,8 +251,7 @@ export const homeContent = {
           "SOC 2, HIPAA, PCI-DSS, and ISO 27001 compliance",
           "Incident response and security operations",
         ],
-        image:
-          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1600&q=85",
+        image: "/cyber-resilience.avif",
         imageAlt: "Secure digital access and cybersecurity technology",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -276,8 +267,7 @@ export const homeContent = {
           "Data migration and quality management",
           "Ongoing optimization and user training",
         ],
-        image:
-          "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85",
+        image: "/erp-solutions.avif",
         imageAlt: "Enterprise team planning an integrated business system",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -293,8 +283,7 @@ export const homeContent = {
           "Decentralized application development",
           "Tokenization and digital asset strategy",
         ],
-        image:
-          "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1600&q=85",
+        image: "/blockchain.avif",
         imageAlt: "Blockchain network and distributed digital technology",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -310,8 +299,7 @@ export const homeContent = {
           "Forecasting, clustering, and anomaly detection",
           "Data engineering, warehousing, and governance",
         ],
-        image:
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85",
+        image: "/data-science.avif",
         imageAlt: "Connected devices and enterprise data technology",
         href: "#contact",
         linkLabel: "Discuss this capability",
@@ -424,8 +412,7 @@ export const homeContent = {
     featureLabel: "Industry understanding",
     featureText:
       "Technology decisions are only effective when they reflect the realities of your industry.",
-    featureImage:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85",
+    featureImage: "/industries-we-serve.avif",
     featureImageAlt: "Modern enterprise workplace",
 
     industries: [
@@ -449,8 +436,7 @@ export const homeContent = {
       label: "Work with Jethavictus",
       href: "#contact",
     },
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2400&q=90",
+    image: "/our-commitment.avif",
     imageAlt: "Connected world representing global enterprise technology",
   },
 
