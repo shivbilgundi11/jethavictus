@@ -187,7 +187,7 @@ export const contactContent = {
       //   hours: ["Monday–Friday", "9:00 AM–6:00 PM", "Local office time"],
       //   mapUrl: "https://maps.google.com/?q=REPLACE+WITH+HEADQUARTERS+ADDRESS",
       //   image:
-      //     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+      //     '/IMAGE_NAME.FORMAT',
       //   imageAlt: "Modern corporate headquarters office",
       //   isPrimary: true,
       // },
@@ -227,8 +227,7 @@ export const contactContent = {
     description:
       "Office meetings are available by appointment. Contact the relevant office or your Jethavictus representative before visiting so we can connect you with the right team.",
 
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=90",
+    image: "/planning-visit.avif",
     imageAlt:
       "Enterprise consultants meeting in a professional office environment",
   },

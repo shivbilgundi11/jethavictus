@@ -301,8 +301,7 @@ export const careersContent = {
     description:
       "Jethavictus is building a consulting force capable of taking on the enterprise challenges that matter most. We are looking for people ready to contribute expertise, judgment, and ownership.",
 
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=90",
+    image: "/build-with-us.avif",
     imageAlt: "Modern collaborative technology workplace",
   },
 

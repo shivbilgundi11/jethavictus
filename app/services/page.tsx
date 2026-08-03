@@ -497,7 +497,7 @@ export default function ServicesPage() {
           alt={closingStatement.imageAlt}
           fill
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
         <div className="bg-brand-navy/55 absolute inset-0" />

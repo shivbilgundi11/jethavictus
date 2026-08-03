@@ -170,8 +170,7 @@ export const servicesContent = {
         "Digital transformation execution",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85",
+      image: "/strategic-it-Consulting.jpg",
       imageAlt: "Enterprise consultants developing a technology strategy",
     },
     {
@@ -201,8 +200,7 @@ export const servicesContent = {
         "Predictive analytics and decision intelligence",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1800&q=85",
+      image: "/artificial-intelligence.avif",
       imageAlt: "Advanced artificial intelligence technology visualization",
     },
     {
@@ -232,8 +230,7 @@ export const servicesContent = {
         "FinOps and cloud cost optimization",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1800&q=85",
+      image: "/cloud-architecture.avif",
       imageAlt: "Cloud computing infrastructure and connected data systems",
     },
     {
@@ -263,8 +260,7 @@ export const servicesContent = {
         "Incident response and security operations",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1800&q=85",
+      image: "/cyber-resilience.avif",
       imageAlt: "Cybersecurity access control and digital identity protection",
     },
     {
@@ -294,8 +290,7 @@ export const servicesContent = {
         "Managed support and optimization",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=85",
+      image: "/erp-solutions.avif",
       imageAlt: "Enterprise team planning integrated business operations",
     },
     {
@@ -325,8 +320,7 @@ export const servicesContent = {
         "Tokenization and digital asset strategy",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1800&q=85",
+      image: "/blockchain.avif",
       imageAlt: "Blockchain technology and distributed network visualization",
     },
     {
@@ -356,8 +350,7 @@ export const servicesContent = {
         "Data warehousing and governance",
       ],
 
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85",
+      image: "/data-science.avif",
       imageAlt: "Connected enterprise devices and data analytics technology",
     },
   ] satisfies Service[],
@@ -471,8 +464,7 @@ export const servicesContent = {
     description:
       "Whether the challenge begins with cloud, security, data, artificial intelligence, enterprise systems, or transformation strategy, Jethavictus connects every decision to the larger enterprise outcome.",
 
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2400&q=90",
+    image: "/our-strategy.avif",
     imageAlt:
       "Advanced enterprise technology infrastructure and digital systems",
   },
