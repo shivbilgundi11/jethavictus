@@ -103,8 +103,7 @@ export const aboutContent = {
       label: "Start a conversation",
       href: "/contact#contact-details",
     },
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2400&q=90",
+    image: "/about-hero-bg.avif",
     imageAlt:
       "Technology specialists collaborating in a modern enterprise environment",
   },
@@ -130,8 +129,7 @@ export const aboutContent = {
     description:
       "The name Jethavictus reflects the standard we bring to every engagement. Each assignment is treated as a mission with clear objectives, disciplined execution, and an outcome we are determined to achieve.",
 
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=85",
+    image: "/about-identity.avif",
     imageAlt: "Enterprise technology team discussing strategy and execution",
 
     points: [
@@ -260,8 +258,7 @@ export const aboutContent = {
     description:
       "Our clients engage Jethavictus when the challenge is too important for generic advice or inexperienced delivery teams.",
 
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85",
+    image: "/about-standards.avif",
     imageAlt: "Experienced enterprise consulting team working together",
 
     items: [
@@ -306,8 +303,7 @@ export const aboutContent = {
     highlightedTitle: "determined to win.",
     description:
       "From the first assessment to implementation and ongoing optimization, Jethavictus brings discipline, ownership, and a relentless focus on results.",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2400&q=90",
+    image: "/our-commitment.avif",
     imageAlt: "Connected world representing global enterprise transformation",
   },
 
