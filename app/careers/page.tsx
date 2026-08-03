@@ -356,7 +356,7 @@ export default function CareersPage() {
 
                             <ul className="mt-5 space-y-4">
                               {job?.responsibilities?.map(
-                                (responsibility: any) => (
+                                (responsibility: string) => (
                                   <li
                                     key={responsibility}
                                     className="text-content-secondary flex items-start gap-3 text-sm leading-7"
@@ -378,7 +378,7 @@ export default function CareersPage() {
                             </p>
 
                             <ul className="mt-5 space-y-4">
-                              {job?.requirements?.map((requirement: any) => (
+                              {job?.requirements?.map((requirement: string) => (
                                 <li
                                   key={requirement}
                                   className="text-content-secondary flex items-start gap-3 text-sm leading-7"
@@ -396,7 +396,7 @@ export default function CareersPage() {
 
                               <ul className="mt-5 space-y-3">
                                 {job?.preferredQualifications?.map(
-                                  (qualification: any) => (
+                                  (qualification: string) => (
                                     <li
                                       key={qualification}
                                       className="text-content-muted flex items-start gap-3 text-sm leading-6"

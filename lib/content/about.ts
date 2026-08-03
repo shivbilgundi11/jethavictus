@@ -48,15 +48,15 @@ export const aboutContent = {
     utilityNavigation: [
       {
         label: "Company",
-        href: "/about",
+        href: "/about#introduction",
       },
       {
         label: "Technology",
-        href: "/#capabilities",
+        href: "/services#services",
       },
       {
         label: "Contact",
-        href: "/#contact",
+        href: "/contact#contact-details",
       },
       {
         label: "info@jethavictus.com",
@@ -67,25 +67,25 @@ export const aboutContent = {
     primaryNavigation: [
       {
         label: "Who we are",
-        href: "/about",
+        href: "/about#introduction",
       },
       {
         label: "Capabilities",
-        href: "/#capabilities",
+        href: "/services#services",
       },
       {
         label: "Our approach",
-        href: "/#approach",
+        href: "/about#operating-model",
       },
       {
         label: "Industries",
-        href: "/#industries",
+        href: "/about#industries",
       },
     ] satisfies NavigationItem[],
 
     cta: {
       label: "Start a conversation",
-      href: "/#contact",
+      href: "/contact#contact-details",
     },
   },
 
@@ -97,11 +97,11 @@ export const aboutContent = {
       "We are a high-performance technology consulting firm for organizations that need more than recommendations. They need decisive strategy, rigorous execution, and measurable results.",
     primaryCta: {
       label: "Explore our capabilities",
-      href: "/#capabilities",
+      href: "/services#services",
     },
     secondaryCta: {
       label: "Start a conversation",
-      href: "/contact",
+      href: "/contact#contact-details",
     },
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2400&q=90",
@@ -338,7 +338,7 @@ export const aboutContent = {
           },
           {
             label: "Contact",
-            href: "/#contact",
+            href: "/contact#contact-details",
           },
         ],
       },

@@ -473,7 +473,7 @@ export const homeContent = {
           },
           {
             label: "Mission and vision",
-            href: "#about",
+            href: "#mission-vision",
           },
           {
             label: "What sets us apart",

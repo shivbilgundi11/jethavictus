@@ -218,8 +218,8 @@ export default function AboutPage() {
         id="mission"
         className="bg-brand-navy text-content-inverse scroll-mt-24"
       >
-        <div className="grid lg:grid-cols-2">
-          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-130 lg:border-r lg:border-b-0 lg:p-16 xl:p-24">
+        <div className="mx-auto grid max-w-360 lg:grid-cols-2">
+          <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-130 lg:border-r lg:border-b-0 lg:p-14 xl:p-20">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {missionVision.mission.label}
             </p>
@@ -233,7 +233,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="p-8 sm:p-12 lg:min-h-130 lg:p-16 xl:p-24">
+          <article className="p-8 sm:p-12 lg:min-h-130 lg:p-14 xl:p-20">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">
               {missionVision.vision.label}
             </p>

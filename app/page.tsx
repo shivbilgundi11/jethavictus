@@ -390,7 +390,10 @@ export default function HomePage() {
       </section>
 
       {/* Mission and vision */}
-      <section className="bg-brand-navy text-content-inverse">
+      <section
+        id="mission-vision"
+        className="bg-brand-navy text-content-inverse"
+      >
         <div className="mx-auto grid max-w-360 lg:grid-cols-2">
           <article className="border-line-inverse/20 border-b p-8 sm:p-12 lg:min-h-120 lg:border-r lg:border-b-0 lg:p-14 xl:p-20">
             <p className="text-brand-sky text-xs font-bold tracking-[0.22em] uppercase">

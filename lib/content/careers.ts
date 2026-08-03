@@ -62,38 +62,38 @@ export const careersContent = {
     utilityNavigation: [
       {
         label: "Company",
-        href: "/about",
+        href: "/about#introduction",
       },
       {
         label: "Technology",
-        href: "/services",
+        href: "/services#services",
       },
       {
         label: "Careers",
-        href: "/careers",
+        href: "/careers#open-positions",
       },
       {
         label: "Contact",
-        href: "/#contact",
+        href: "/contact#contact-details",
       },
     ] satisfies NavigationItem[],
 
     primaryNavigation: [
       {
         label: "Who we are",
-        href: "/about",
+        href: "/about#introduction",
       },
       {
         label: "Capabilities",
-        href: "/services",
+        href: "/services#services",
       },
       {
         label: "Careers",
-        href: "/careers",
+        href: "/careers#open-positions",
       },
       {
         label: "Industries",
-        href: "/#industries",
+        href: "/about#industries",
       },
     ] satisfies NavigationItem[],
 
@@ -117,7 +117,7 @@ export const careersContent = {
 
     secondaryCta: {
       label: "Discover who we are",
-      href: "/about",
+      href: "/about#introduction",
     },
 
     image:

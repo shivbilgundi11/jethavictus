@@ -54,15 +54,15 @@ export const servicesContent = {
     utilityNavigation: [
       {
         label: "Company",
-        href: "/about",
+        href: "/about#introduction",
       },
       {
         label: "Technology",
-        href: "/services",
+        href: "/services#services",
       },
       {
         label: "Contact",
-        href: "/#contact",
+        href: "/contact#contact-details",
       },
       {
         label: "info@jethavictus.com",
@@ -73,25 +73,25 @@ export const servicesContent = {
     primaryNavigation: [
       {
         label: "Who we are",
-        href: "/about",
+        href: "/about#introduction",
       },
       {
         label: "Capabilities",
-        href: "/services",
+        href: "/services#services",
       },
       {
         label: "Our approach",
-        href: "/#approach",
+        href: "/services#delivery",
       },
       {
         label: "Industries",
-        href: "/#industries",
+        href: "/about#industries",
       },
     ] satisfies NavigationItem[],
 
     cta: {
       label: "Start a conversation",
-      href: "/#contact",
+      href: "/contact#contact-details",
     },
   },
 
@@ -109,7 +109,7 @@ export const servicesContent = {
 
     secondaryCta: {
       label: "Discuss your challenge",
-      href: "/contact",
+      href: "/contact#contact-details",
     },
 
     image:
